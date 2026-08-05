@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valeb\\GitHub\\ASP.NET-Core-Web-API\\ASP.NET-Core-Web-API.csproj": {}
+    "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP.NET-Core-Web-API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valeb\\GitHub\\ASP.NET-Core-Web-API\\ASP.NET-Core-Web-API.csproj": {
+    "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP.NET-Core-Web-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valeb\\GitHub\\ASP.NET-Core-Web-API\\ASP.NET-Core-Web-API.csproj",
+        "projectUniqueName": "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP.NET-Core-Web-API.csproj",
         "projectName": "ASP.NET-Core-Web-API",
-        "projectPath": "C:\\Users\\valeb\\GitHub\\ASP.NET-Core-Web-API\\ASP.NET-Core-Web-API.csproj",
+        "projectPath": "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP.NET-Core-Web-API.csproj",
         "packagesPath": "C:\\Users\\valeb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valeb\\GitHub\\ASP.NET-Core-Web-API\\obj\\",
+        "outputPath": "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\valeb\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -47,6 +47,16 @@
           "targetAlias": "net10.0",
           "dependencies": {
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[10.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[10.0.10, )"
             },
