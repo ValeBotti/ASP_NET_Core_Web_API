@@ -8,6 +8,5 @@ public class UidSid
 
     [ForeignKey(nameof(User))]
     public required int Uid { get; set; }
-
-    public required User User { get; set; }
+    public User? User { get; set; } // navigation property
 }

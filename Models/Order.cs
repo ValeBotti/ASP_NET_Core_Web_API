@@ -8,13 +8,11 @@ public class Order
 
     [ForeignKey(nameof(User))]
     public required int Uid { get; set; }
+    public User? User { get; set; }
 
     [ForeignKey(nameof(Menu))]
     public required int Mid { get; set; }
-
-    public required User User { get; set; }
-
-    public required Menu Menu { get; set; }
+    public Menu? Menu { get; set; }
 
     public required string CreationTimestamp { get; set; }
 
