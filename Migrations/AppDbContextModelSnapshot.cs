@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ASP.NET_Core_Web_API.Migrations
+namespace ASP_NET_Core_Web_API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -117,29 +117,24 @@ namespace ASP.NET_Core_Web_API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Uid"));
 
                     b.Property<string>("CardCVV")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CardExpireMonth")
+                    b.Property<int?>("CardExpireMonth")
                         .HasColumnType("int");
 
-                    b.Property<int>("CardExpireYear")
+                    b.Property<int?>("CardExpireYear")
                         .HasColumnType("int");
 
                     b.Property<string>("CardFullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CardNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("LastOid")

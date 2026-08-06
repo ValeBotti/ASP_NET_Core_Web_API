@@ -3581,11 +3581,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP.NET-Core-Web-API.csproj",
-      "projectName": "ASP.NET-Core-Web-API",
-      "projectPath": "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP.NET-Core-Web-API.csproj",
+      "projectUniqueName": "c:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP_NET_Core_Web_API.csproj",
+      "projectName": "ASP_NET_Core_Web_API",
+      "projectPath": "c:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\ASP_NET_Core_Web_API.csproj",
       "packagesPath": "C:\\Users\\valeb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\obj\\",
+      "outputPath": "c:\\Users\\valeb\\GitHub\\ASP_NET_Core_Web_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\valeb\\AppData\\Roaming\\NuGet\\NuGet.Config"

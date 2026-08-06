@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace ASP.NET_Core_Web_API.Migrations
+namespace ASP_NET_Core_Web_API.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration
@@ -36,13 +36,13 @@ namespace ASP.NET_Core_Web_API.Migrations
                 {
                     Uid = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardFullName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardExpireMonth = table.Column<int>(type: "int", nullable: false),
-                    CardExpireYear = table.Column<int>(type: "int", nullable: false),
-                    CardCVV = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CardFullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CardExpireMonth = table.Column<int>(type: "int", nullable: true),
+                    CardExpireYear = table.Column<int>(type: "int", nullable: true),
+                    CardCVV = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastOid = table.Column<int>(type: "int", nullable: true),
                     OrderStatus = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
