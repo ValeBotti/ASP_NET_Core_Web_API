@@ -160,3 +160,4 @@ C:\Users\valeb\GitHub\ASP_NET_Core_Web_API\obj\Debug\net10.0\refint\ASP_NET_Core
 C:\Users\valeb\GitHub\ASP_NET_Core_Web_API\obj\Debug\net10.0\ASP_NET_Core_Web_API.pdb
 C:\Users\valeb\GitHub\ASP_NET_Core_Web_API\obj\Debug\net10.0\ASP_NET_Core_Web_API.genruntimeconfig.cache
 C:\Users\valeb\GitHub\ASP_NET_Core_Web_API\obj\Debug\net10.0\ref\ASP_NET_Core_Web_API.dll
+C:\Users\valeb\GitHub\ASP_NET_Core_Web_API\bin\Debug\net10.0\Data\menus.json

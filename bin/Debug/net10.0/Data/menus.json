@@ -1,0 +1,242 @@
+[
+  {
+    "Name": "Avocado Toast",
+    "Price": 7.50,
+    "Location": { "Latitude": 45.0524, "Longitude": 9.692 },
+    "ImageVersion": 1,
+    "ImageFile": "avocado_toast.jpg",
+    "ShortDescription": "Fresh avocado toast",
+    "LongDescription": "Crunchy bread topped with ripe avocado, lime, and black pepper.",
+    "DeliveryTime": 15
+  },
+  {
+    "Name": "Burritos",
+    "Price": 9.90,
+    "Location": { "Latitude": 45.0385, "Longitude": 9.6705 },
+    "ImageVersion": 1,
+    "ImageFile": "burritos.jpg",
+    "ShortDescription": "Stuffed burritos",
+    "LongDescription": "Tortilla filled with meat, rice, beans, and spicy sauce.",
+    "DeliveryTime": 25
+  },
+  {
+    "Name": "Cake",
+    "Price": 4.50,
+    "Location": { "Latitude": 45.0605, "Longitude": 9.708 },
+    "ImageVersion": 1,
+    "ImageFile": "cake.jpg",
+    "ShortDescription": "Slice of cake",
+    "LongDescription": "Soft cake with a light cream filling.",
+    "DeliveryTime": 10
+  },
+  {
+    "Name": "Cocktail",
+    "Price": 6.00,
+    "Location": { "Latitude": 45.0455, "Longitude": 9.71 },
+    "ImageVersion": 1,
+    "ImageFile": "cocktail.jpg",
+    "ShortDescription": "Fresh cocktail",
+    "LongDescription": "Refreshing drink with fruit and ice.",
+    "DeliveryTime": 5
+  },
+  {
+    "Name": "Donuts",
+    "Price": 3.50,
+    "Location": { "Latitude": 45.0538, "Longitude": 9.6875 },
+    "ImageVersion": 1,
+    "ImageFile": "donuts.jpg",
+    "ShortDescription": "Sweet donuts",
+    "LongDescription": "Glazed donuts with sugar and chocolate.",
+    "DeliveryTime": 10
+  },
+  {
+    "Name": "Dumplings",
+    "Price": 8.50,
+    "Location": { "Latitude": 45.056, "Longitude": 9.686 },
+    "ImageVersion": 1,
+    "ImageFile": "dumplings.jpg",
+    "ShortDescription": "Asian dumplings",
+    "LongDescription": "Dumplings filled with meat and vegetables.",
+    "DeliveryTime": 20
+  },
+  {
+    "Name": "Fries",
+    "Price": 4.00,
+    "Location": { "Latitude": 45.0615, "Longitude": 9.698 },
+    "ImageVersion": 1,
+    "ImageFile": "fries.jpg",
+    "ShortDescription": "French fries",
+    "LongDescription": "Crispy fries with sea salt.",
+    "DeliveryTime": 10
+  },
+  {
+    "Name": "Grilled Beef",
+    "Price": 12.90,
+    "Location": { "Latitude": 45.066, "Longitude": 9.716 },
+    "ImageVersion": 1,
+    "ImageFile": "grilled_beef.jpg",
+    "ShortDescription": "Grilled beef",
+    "LongDescription": "Grilled beef seasoned with spices and served with sides.",
+    "DeliveryTime": 30
+  },
+  {
+    "Name": "Hamburger",
+    "Price": 9.50,
+    "Location": { "Latitude": 45.07, "Longitude": 9.68 },
+    "ImageVersion": 1,
+    "ImageFile": "hamburger.jpg",
+    "ShortDescription": "Classic hamburger",
+    "LongDescription": "Burger with meat, lettuce, and tomato.",
+    "DeliveryTime": 20
+  },
+  {
+    "Name": "Ice Cream",
+    "Price": 3.00,
+    "Location": { "Latitude": 45.0705, "Longitude": 9.735 },
+    "ImageVersion": 1,
+    "ImageFile": "ice_cream.jpg",
+    "ShortDescription": "Artisanal ice cream",
+    "LongDescription": "Creamy ice cream with assorted flavors.",
+    "DeliveryTime": 5
+  },
+  {
+    "Name": "Meatballs",
+    "Price": 8.00,
+    "Location": { "Latitude": 45.033, "Longitude": 9.75 },
+    "ImageVersion": 1,
+    "ImageFile": "meatballs.jpg",
+    "ShortDescription": "Meatballs in sauce",
+    "LongDescription": "Meatballs served with tomato sauce.",
+    "DeliveryTime": 25
+  },
+  {
+    "Name": "Muffin",
+    "Price": 2.50,
+    "Location": { "Latitude": 45.018, "Longitude": 9.633 },
+    "ImageVersion": 1,
+    "ImageFile": "muffin.jpg",
+    "ShortDescription": "Soft muffin",
+    "LongDescription": "Moist muffin with chocolate chips.",
+    "DeliveryTime": 10
+  },
+  {
+    "Name": "Paella",
+    "Price": 11.90,
+    "Location": { "Latitude": 45.08, "Longitude": 9.65 },
+    "ImageVersion": 1,
+    "ImageFile": "paella.jpg",
+    "ShortDescription": "Spanish paella",
+    "LongDescription": "Rice with seafood, meat, and vegetables.",
+    "DeliveryTime": 35
+  },
+  {
+    "Name": "Pancake",
+    "Price": 5.00,
+    "Location": { "Latitude": 45.045, "Longitude": 9.58 },
+    "ImageVersion": 1,
+    "ImageFile": "pancake.jpg",
+    "ShortDescription": "Sweet pancakes",
+    "LongDescription": "Fluffy pancakes with maple syrup.",
+    "DeliveryTime": 15
+  },
+  {
+    "Name": "Pasta",
+    "Price": 7.00,
+    "Location": { "Latitude": 45.056, "Longitude": 9.56 },
+    "ImageVersion": 1,
+    "ImageFile": "pasta.jpg",
+    "ShortDescription": "Italian pasta",
+    "LongDescription": "Pasta served with traditional sauce.",
+    "DeliveryTime": 20
+  },
+  {
+    "Name": "Pizza",
+    "Price": 8.50,
+    "Location": { "Latitude": 45.0524, "Longitude": 9.692 },
+    "ImageVersion": 1,
+    "ImageFile": "pizza.jpg",
+    "ShortDescription": "Classic pizza",
+    "LongDescription": "Pizza topped with mozzarella and tomato.",
+    "DeliveryTime": 25
+  },
+  {
+    "Name": "Poke",
+    "Price": 10.50,
+    "Location": { "Latitude": 45.0385, "Longitude": 9.6705 },
+    "ImageVersion": 1,
+    "ImageFile": "poke.jpg",
+    "ShortDescription": "Poke bowl",
+    "LongDescription": "Bowl with raw fish, rice, and vegetables.",
+    "DeliveryTime": 20
+  },
+  {
+    "Name": "Popcorn",
+    "Price": 2.00,
+    "Location": { "Latitude": 45.0605, "Longitude": 9.708 },
+    "ImageVersion": 1,
+    "ImageFile": "popcorn.jpg",
+    "ShortDescription": "Salted popcorn",
+    "LongDescription": "Crunchy popped corn.",
+    "DeliveryTime": 5
+  },
+  {
+    "Name": "Ramen",
+    "Price": 9.00,
+    "Location": { "Latitude": 45.0455, "Longitude": 9.71 },
+    "ImageVersion": 1,
+    "ImageFile": "ramen.jpg",
+    "ShortDescription": "Japanese ramen",
+    "LongDescription": "Hot broth with noodles and meat.",
+    "DeliveryTime": 30
+  },
+  {
+    "Name": "Salad",
+    "Price": 6.00,
+    "Location": { "Latitude": 45.0538, "Longitude": 9.6875 },
+    "ImageVersion": 1,
+    "ImageFile": "salad.jpg",
+    "ShortDescription": "Fresh salad",
+    "LongDescription": "Mixed vegetables with light dressing.",
+    "DeliveryTime": 10
+  },
+  {
+    "Name": "Salmon",
+    "Price": 12.00,
+    "Location": { "Latitude": 45.056, "Longitude": 9.686 },
+    "ImageVersion": 1,
+    "ImageFile": "salmon.jpg",
+    "ShortDescription": "Grilled salmon",
+    "LongDescription": "Salmon fillet served with sides.",
+    "DeliveryTime": 25
+  },
+  {
+    "Name": "Soup",
+    "Price": 5.50,
+    "Location": { "Latitude": 45.0615, "Longitude": 9.698 },
+    "ImageVersion": 1,
+    "ImageFile": "soup.jpg",
+    "ShortDescription": "Hot soup",
+    "LongDescription": "Vegetable and legume soup.",
+    "DeliveryTime": 15
+  },
+  {
+    "Name": "Tacos",
+    "Price": 8.00,
+    "Location": { "Latitude": 45.066, "Longitude": 9.716 },
+    "ImageVersion": 1,
+    "ImageFile": "tacos.jpg",
+    "ShortDescription": "Mexican tacos",
+    "LongDescription": "Tacos filled with meat and vegetables.",
+    "DeliveryTime": 20
+  },
+  {
+    "Name": "Waffles",
+    "Price": 4.50,
+    "Location": { "Latitude": 45.07, "Longitude": 9.68 },
+    "ImageVersion": 1,
+    "ImageFile": "waffles.jpg",
+    "ShortDescription": "Sweet waffle",
+    "LongDescription": "Crunchy waffle topped with fruit.",
+    "DeliveryTime": 15
+  }
+]
