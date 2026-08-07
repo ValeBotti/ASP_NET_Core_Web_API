@@ -163,7 +163,7 @@
     "Name": "Poke",
     "Price": 10.50,
     "Location": { "Latitude": 45.0385, "Longitude": 9.6705 },
-    "ImageVersion": 1,
+    "ImageVersion": 2,
     "ImageFile": "poke.jpg",
     "ShortDescription": "Poke bowl",
     "LongDescription": "Bowl with raw fish, rice, and vegetables.",

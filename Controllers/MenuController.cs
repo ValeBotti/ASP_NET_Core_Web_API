@@ -42,4 +42,29 @@ public class MenuController : ControllerBase
 
         return Ok(new { base64 = menu.Image });// Return the image data as a JSON object
     }
+    
+    [HttpGet("{mid}")]
+    public IActionResult GetMenuDetails(int mid)
+    {
+        var menu = _db.Menus
+            .AsNoTracking()
+            .Where(m => m.Mid == mid)
+            .Select(m => new MenuListDto
+            {
+                Mid = m.Mid,
+                Name = m.Name,
+                Price = m.Price,
+                Location = m.Location,
+                ImageVersion = m.ImageVersion,
+                ShortDescription = m.ShortDescription,
+                LongDescription = m.LongDescription,
+                DeliveryTime = m.DeliveryTime
+            })
+            .FirstOrDefault();
+
+        if (menu == null)
+            return NotFound();
+
+        return Ok(menu);
+    }
 }
