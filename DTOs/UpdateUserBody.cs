@@ -1,4 +1,4 @@
-public class UpdateUserDto
+public class UpdateUserBody
 {
     public string? FirstName { get; set; }
     public string? LastName { get; set; }

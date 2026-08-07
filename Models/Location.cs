@@ -1,5 +1,5 @@
 public class Location
 {
-    public double Latitude { get; set; }
-    public double Longitude { get; set; }
+    public float Lat { get; set; }
+    public float Lng { get; set; }
 }

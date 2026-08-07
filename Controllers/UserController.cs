@@ -21,7 +21,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("{uid}")]
-    public IActionResult UpdateUser(int uid, [FromBody] UpdateUserDto dto)
+    public IActionResult UpdateUser(int uid, [FromBody] UpdateUserBody dto)
     {
 
         var user = _db.Users.FirstOrDefault(u => u.Uid == uid);

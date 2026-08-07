@@ -159,11 +159,11 @@ namespace ASP_NET_Core_Web_API.Migrations
                             b1.Property<int>("MenuMid")
                                 .HasColumnType("int");
 
-                            b1.Property<double>("Latitude")
-                                .HasColumnType("float");
+                            b1.Property<float>("Lat")
+                                .HasColumnType("real");
 
-                            b1.Property<double>("Longitude")
-                                .HasColumnType("float");
+                            b1.Property<float>("Lng")
+                                .HasColumnType("real");
 
                             b1.HasKey("MenuMid");
 
@@ -196,11 +196,11 @@ namespace ASP_NET_Core_Web_API.Migrations
                             b1.Property<int>("OrderOid")
                                 .HasColumnType("int");
 
-                            b1.Property<double>("Latitude")
-                                .HasColumnType("float");
+                            b1.Property<float>("Lat")
+                                .HasColumnType("real");
 
-                            b1.Property<double>("Longitude")
-                                .HasColumnType("float");
+                            b1.Property<float>("Lng")
+                                .HasColumnType("real");
 
                             b1.HasKey("OrderOid");
 
@@ -215,11 +215,11 @@ namespace ASP_NET_Core_Web_API.Migrations
                             b1.Property<int>("OrderOid")
                                 .HasColumnType("int");
 
-                            b1.Property<double>("Latitude")
-                                .HasColumnType("float");
+                            b1.Property<float>("Lat")
+                                .HasColumnType("real");
 
-                            b1.Property<double>("Longitude")
-                                .HasColumnType("float");
+                            b1.Property<float>("Lng")
+                                .HasColumnType("real");
 
                             b1.HasKey("OrderOid");
 

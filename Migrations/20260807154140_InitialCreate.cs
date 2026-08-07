@@ -18,8 +18,8 @@ namespace ASP_NET_Core_Web_API.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<double>(type: "float", nullable: false),
-                    Location_Latitude = table.Column<double>(type: "float", nullable: false),
-                    Location_Longitude = table.Column<double>(type: "float", nullable: false),
+                    Location_Lat = table.Column<float>(type: "real", nullable: false),
+                    Location_Lng = table.Column<float>(type: "real", nullable: false),
                     ImageVersion = table.Column<int>(type: "int", nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ShortDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -62,12 +62,12 @@ namespace ASP_NET_Core_Web_API.Migrations
                     Mid = table.Column<int>(type: "int", nullable: false),
                     CreationTimestamp = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DeliveryLocation_Latitude = table.Column<double>(type: "float", nullable: false),
-                    DeliveryLocation_Longitude = table.Column<double>(type: "float", nullable: false),
+                    DeliveryLocation_Lat = table.Column<float>(type: "real", nullable: false),
+                    DeliveryLocation_Lng = table.Column<float>(type: "real", nullable: false),
                     ExpectedDeliveryTimestamp = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DeliveryTimestamp = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CurrentPosition_Latitude = table.Column<double>(type: "float", nullable: false),
-                    CurrentPosition_Longitude = table.Column<double>(type: "float", nullable: false)
+                    CurrentPosition_Lat = table.Column<float>(type: "real", nullable: false),
+                    CurrentPosition_Lng = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
