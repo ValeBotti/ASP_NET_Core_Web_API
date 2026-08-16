@@ -1,24 +1,22 @@
-*.swp
-*.*~
-project.lock.json
-.DS_Store
-*.pyc
-nupkg/
+###############################
+# .NET / ASP.NET Core
+###############################
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
+# Build output (tutte le cartelle, anche nelle subdirectory)
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
 
-# Rider
+# Publish output
+publish/
+out/
+
+# Visual Studio / VS Code / Rider
+.vscode/
 .idea/
-
-# Visual Studio
 .vs/
-
-# Fleet
 .fleet/
-
-# Code Rush
 .cr/
 
 # User-specific files
@@ -27,23 +25,35 @@ nupkg/
 *.userosscache
 *.sln.docstates
 
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
-[Oo]ut/
-msbuild.log
-msbuild.err
-msbuild.wrn
+# Logs
+*.log
+
+# ASP.NET Core generated files
+*.dll
+*.exe
+*.pdb
+*.cache
+*.db
+*.bak
+*.tmp
+*.temp
+
+# Razor build cache
+*.rjsmrazor.dswa.cache.json
+*.rjsmcshtml.dswa.cache.json
+
+# SourceLink
+*.sourcelink.json
+
+# NuGet packages
+*.nupkg
+packages/
 
 # Node.js build artifacts
 node_modules/
 package-lock.json
 package.json
+
+# OS files
+.DS_Store
+Thumbs.db
