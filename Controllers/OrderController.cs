@@ -22,6 +22,13 @@ public class OrderController : ControllerBase
         if (menu == null)
             return NotFound($"Menu con MID {mid} non trovato.");
 
+        string cardNumber = body.CardNumber;
+
+        if (!string.IsNullOrEmpty(cardNumber) && cardNumber.StartsWith("0"))
+        {
+            return StatusCode(403, "INVALID_CARD");
+        }
+
         string sid = body.Sid;
         Location deliveryLocation = body.DeliveryLocation;
 
@@ -57,8 +64,15 @@ public class OrderController : ControllerBase
             }
         };
 
-        _db.Orders.Add(order);
-        _db.SaveChanges();
+        try {
+            _db.Orders.Add(order);
+            _db.SaveChanges();
+        } catch (DbUpdateException ex) {
+            if (ex.InnerException?.Message.Contains("IX_Orders_Uid_OnDelivery") == true) {
+                return StatusCode(409, "ORDER_ALREADY_ON_DELIVERY");
+            }
+            throw;
+        }
 
         var dto = new OrderBoughtDto
         {

@@ -118,6 +118,11 @@ namespace ASP_NET_Core_Web_API.Migrations
                 name: "IX_UidSids_Uid",
                 table: "UidSids",
                 column: "Uid");
+
+            migrationBuilder.Sql(
+                @"CREATE UNIQUE INDEX IX_Orders_Uid_OnDelivery
+                ON Orders (Uid)
+                WHERE Status = 'ON_DELIVERY';");
         }
 
         /// <inheritdoc />
@@ -134,6 +139,9 @@ namespace ASP_NET_Core_Web_API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.Sql(
+                @"DROP INDEX IX_Orders_Uid_OnDelivery ON Orders;");
         }
     }
 }
