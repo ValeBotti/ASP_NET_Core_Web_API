@@ -1,4 +1,4 @@
-public class OrderUpdateDto
+public class OrderOnDeliveryDto
 {
     public required int Oid { get; set; }
     public required int Uid { get; set; }

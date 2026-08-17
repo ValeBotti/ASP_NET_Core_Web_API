@@ -2,7 +2,7 @@
   {
     "Name": "Avocado Toast",
     "Price": 7.50,
-    "Location": { "Latitude": 45.0524, "Longitude": 9.692 },
+    "Location": { "Lat": 45.0524, "Lng": 9.692 },
     "ImageVersion": 1,
     "ImageFile": "avocado_toast.jpg",
     "ShortDescription": "Fresh avocado toast",
@@ -12,7 +12,7 @@
   {
     "Name": "Burritos",
     "Price": 9.90,
-    "Location": { "Latitude": 45.0385, "Longitude": 9.6705 },
+    "Location": { "Lat": 45.0385, "Lng": 9.6705 },
     "ImageVersion": 1,
     "ImageFile": "burritos.jpg",
     "ShortDescription": "Stuffed burritos",
@@ -22,7 +22,7 @@
   {
     "Name": "Cake",
     "Price": 4.50,
-    "Location": { "Latitude": 45.0605, "Longitude": 9.708 },
+    "Location": { "Lat": 45.0605, "Lng": 9.708 },
     "ImageVersion": 1,
     "ImageFile": "cake.jpg",
     "ShortDescription": "Slice of cake",
@@ -32,7 +32,7 @@
   {
     "Name": "Cocktail",
     "Price": 6.00,
-    "Location": { "Latitude": 45.0455, "Longitude": 9.71 },
+    "Location": { "Lat": 45.0455, "Lng": 9.71 },
     "ImageVersion": 1,
     "ImageFile": "cocktail.jpg",
     "ShortDescription": "Fresh cocktail",
@@ -42,7 +42,7 @@
   {
     "Name": "Donuts",
     "Price": 3.50,
-    "Location": { "Latitude": 45.0538, "Longitude": 9.6875 },
+    "Location": { "Lat": 45.0538, "Lng": 9.6875 },
     "ImageVersion": 1,
     "ImageFile": "donuts.jpg",
     "ShortDescription": "Sweet donuts",
@@ -52,7 +52,7 @@
   {
     "Name": "Dumplings",
     "Price": 8.50,
-    "Location": { "Latitude": 45.056, "Longitude": 9.686 },
+    "Location": { "Lat": 45.056, "Lng": 9.686 },
     "ImageVersion": 1,
     "ImageFile": "dumplings.jpg",
     "ShortDescription": "Asian dumplings",
@@ -62,7 +62,7 @@
   {
     "Name": "Fries",
     "Price": 4.00,
-    "Location": { "Latitude": 45.0615, "Longitude": 9.698 },
+    "Location": { "Lat": 45.0615, "Lng": 9.698 },
     "ImageVersion": 1,
     "ImageFile": "fries.jpg",
     "ShortDescription": "French fries",
@@ -72,7 +72,7 @@
   {
     "Name": "Grilled Beef",
     "Price": 12.90,
-    "Location": { "Latitude": 45.066, "Longitude": 9.716 },
+    "Location": { "Lat": 45.066, "Lng": 9.716 },
     "ImageVersion": 1,
     "ImageFile": "grilled_beef.jpg",
     "ShortDescription": "Grilled beef",
@@ -82,7 +82,7 @@
   {
     "Name": "Hamburger",
     "Price": 9.50,
-    "Location": { "Latitude": 45.07, "Longitude": 9.68 },
+    "Location": { "Lat": 45.07, "Lng": 9.68 },
     "ImageVersion": 1,
     "ImageFile": "hamburger.jpg",
     "ShortDescription": "Classic hamburger",
@@ -92,7 +92,7 @@
   {
     "Name": "Ice Cream",
     "Price": 3.00,
-    "Location": { "Latitude": 45.0705, "Longitude": 9.735 },
+    "Location": { "Lat": 45.0705, "Lng": 9.735 },
     "ImageVersion": 1,
     "ImageFile": "ice_cream.jpg",
     "ShortDescription": "Artisanal ice cream",
@@ -102,7 +102,7 @@
   {
     "Name": "Meatballs",
     "Price": 8.00,
-    "Location": { "Latitude": 45.033, "Longitude": 9.75 },
+    "Location": { "Lat": 45.033, "Lng": 9.75 },
     "ImageVersion": 1,
     "ImageFile": "meatballs.jpg",
     "ShortDescription": "Meatballs in sauce",
@@ -112,7 +112,7 @@
   {
     "Name": "Muffin",
     "Price": 2.50,
-    "Location": { "Latitude": 45.018, "Longitude": 9.633 },
+    "Location": { "Lat": 45.018, "Lng": 9.633 },
     "ImageVersion": 1,
     "ImageFile": "muffin.jpg",
     "ShortDescription": "Soft muffin",
@@ -122,7 +122,7 @@
   {
     "Name": "Paella",
     "Price": 11.90,
-    "Location": { "Latitude": 45.08, "Longitude": 9.65 },
+    "Location": { "Lat": 45.08, "Lng": 9.65 },
     "ImageVersion": 1,
     "ImageFile": "paella.jpg",
     "ShortDescription": "Spanish paella",
@@ -132,7 +132,7 @@
   {
     "Name": "Pancake",
     "Price": 5.00,
-    "Location": { "Latitude": 45.045, "Longitude": 9.58 },
+    "Location": { "Lat": 45.045, "Lng": 9.58 },
     "ImageVersion": 1,
     "ImageFile": "pancake.jpg",
     "ShortDescription": "Sweet pancakes",
@@ -142,7 +142,7 @@
   {
     "Name": "Pasta",
     "Price": 7.00,
-    "Location": { "Latitude": 45.056, "Longitude": 9.56 },
+    "Location": { "Lat": 45.056, "Lng": 9.56 },
     "ImageVersion": 1,
     "ImageFile": "pasta.jpg",
     "ShortDescription": "Italian pasta",
@@ -152,7 +152,7 @@
   {
     "Name": "Pizza",
     "Price": 8.50,
-    "Location": { "Latitude": 45.0524, "Longitude": 9.692 },
+    "Location": { "Lat": 45.0524, "Lng": 9.692 },
     "ImageVersion": 1,
     "ImageFile": "pizza.jpg",
     "ShortDescription": "Classic pizza",
@@ -162,7 +162,7 @@
   {
     "Name": "Poke",
     "Price": 10.50,
-    "Location": { "Latitude": 45.0385, "Longitude": 9.6705 },
+    "Location": { "Lat": 45.0385, "Lng": 9.6705 },
     "ImageVersion": 2,
     "ImageFile": "poke.jpg",
     "ShortDescription": "Poke bowl",
@@ -172,7 +172,7 @@
   {
     "Name": "Popcorn",
     "Price": 2.00,
-    "Location": { "Latitude": 45.0605, "Longitude": 9.708 },
+    "Location": { "Lat": 45.0605, "Lng": 9.708 },
     "ImageVersion": 1,
     "ImageFile": "popcorn.jpg",
     "ShortDescription": "Salted popcorn",
@@ -182,7 +182,7 @@
   {
     "Name": "Ramen",
     "Price": 9.00,
-    "Location": { "Latitude": 45.0455, "Longitude": 9.71 },
+    "Location": { "Lat": 45.0455, "Lng": 9.71 },
     "ImageVersion": 1,
     "ImageFile": "ramen.jpg",
     "ShortDescription": "Japanese ramen",
@@ -192,7 +192,7 @@
   {
     "Name": "Salad",
     "Price": 6.00,
-    "Location": { "Latitude": 45.0538, "Longitude": 9.6875 },
+    "Location": { "Lat": 45.0538, "Lng": 9.6875 },
     "ImageVersion": 1,
     "ImageFile": "salad.jpg",
     "ShortDescription": "Fresh salad",
@@ -202,7 +202,7 @@
   {
     "Name": "Salmon",
     "Price": 12.00,
-    "Location": { "Latitude": 45.056, "Longitude": 9.686 },
+    "Location": { "Lat": 45.056, "Lng": 9.686 },
     "ImageVersion": 1,
     "ImageFile": "salmon.jpg",
     "ShortDescription": "Grilled salmon",
@@ -212,7 +212,7 @@
   {
     "Name": "Soup",
     "Price": 5.50,
-    "Location": { "Latitude": 45.0615, "Longitude": 9.698 },
+    "Location": { "Lat": 45.0615, "Lng": 9.698 },
     "ImageVersion": 1,
     "ImageFile": "soup.jpg",
     "ShortDescription": "Hot soup",
@@ -222,7 +222,7 @@
   {
     "Name": "Tacos",
     "Price": 8.00,
-    "Location": { "Latitude": 45.066, "Longitude": 9.716 },
+    "Location": { "Lat": 45.066, "Lng": 9.716 },
     "ImageVersion": 1,
     "ImageFile": "tacos.jpg",
     "ShortDescription": "Mexican tacos",
@@ -232,7 +232,7 @@
   {
     "Name": "Waffles",
     "Price": 4.50,
-    "Location": { "Latitude": 45.07, "Longitude": 9.68 },
+    "Location": { "Lat": 45.07, "Lng": 9.68 },
     "ImageVersion": 1,
     "ImageFile": "waffles.jpg",
     "ShortDescription": "Sweet waffle",
