@@ -25,7 +25,7 @@ Abstraction, Specification, and Object-Oriented Design*](https://www.oreilly.com
 
 Thanks to ChatGPT, I've learned about the existence of XML Documentation comments, and that's what I've used to add my Liskov-friendly comments.
 
-> My comments specify the effects and modifications of those methods. The method signature makes requirements and returns explicit (my signatures needed refactoring too), and for my sanity's sake, I'll assume there are no errors in my methods to specify.
+> My comments specify the effects and modifications of those methods. The method signature makes returns explicit (my signatures needed refactoring too), and for my sanity's sake, I'll assume there are no errors in my methods to specify.
 
 
 // ## OVERVIEW: Layered Web API Architecture
