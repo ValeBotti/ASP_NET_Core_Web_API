@@ -14,9 +14,9 @@ That meant I couldn't see my application working properly, and that's why I deci
 # REFACTORING:
 
 #### 1. ABSTRACTION BY SPECIFICATION / CONTRACT
-When looking at my project, I couldn't be satisfied with my "OrderController" class; I knew that my methods were doing way too many responsibilities, and even I couldn't comprehend it at first glance.//
-The first thing I thought was that I clearly wasn't using the framework's standard architecture in the best way, so I wanted to add a few comments to help me out in the process of **separation of concerns**.//
-Right away, I remembered my OOP class in Java and the Liskov book -> abstraction by contract.//
+When looking at my project, I couldn't be satisfied with my "OrderController" class; I knew that my methods were doing way too many responsibilities, and even I couldn't comprehend it at first glance.<br>
+The first thing I thought was that I clearly wasn't using the framework's standard architecture in the best way, so I wanted to add a few comments to help me out in the process of **separation of concerns**.<br>
+Right away, I remembered my OOP class in Java and the Liskov book -> abstraction by contract.<br>
 
 Thanks to ChatGPT, I've learned about the existence of XML Documentation comments, and that's what I've used to add my Liskov-friendly comments.
 
