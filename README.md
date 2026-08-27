@@ -28,7 +28,8 @@ Thanks to ChatGPT, I've learned about the existence of XML Documentation comment
 > My comments specify the effects and modifications of those methods. The method's signature makes returns explicit (my signatures needed refactoring too), and for my sanity's sake, I'll assume there are no errors in my methods to specify.
 
 **Let's go over what Liskov said on her book about procedural abstractions:** <br>
-**headers / (method's signatures):** "gives the name of the procedure, the number, order, and types of its parameters and the type of its results" "it's similar of the "form" of a mathematical function, as in f: integer-integer".<br>
+**headers / (method's signatures):** "gives the name of the procedure, the number, order, and types of its parameters and the type of its results" "it's similar of the "form" of a mathematical function, as in 
+f: integer->integer".<br>
 **requires:** "the requires clause states the constraints under which the abstraction is defined. The require clause is needed if the procedure is partial, if the procedure is total it can be omitted".<br>
 **modifies:** "the modifies clause lists the names of any inputs that are modified by the procedure. If some inputs are modified, we say the procedure has a side effect. The modifies clause can be omitted when no inputs are modified".<br>
 **effects:** "the effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not sadisfied".<br>
