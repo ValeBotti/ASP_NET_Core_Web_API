@@ -32,7 +32,7 @@ Thanks to ChatGPT, I've learned about the existence of XML Documentation comment
 f: integer->integer".<br>
 - **requires:** "The requires clause states the constraints under which the abstraction is defined. The requires clause is needed if the procedure is partial; if the procedure is total, it can be omitted".<br>
 - **modifies:** "The modifies clause lists the names of any inputs that are modified by the procedure. If some inputs are modified, we say the procedure has a side effect. The modifies clause can be omitted when no inputs are modified".<br>
-- **effects:** "The effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not satisfied.<br>
+- **effects:** "The effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not satisfied".<br>
 
 #### 2. CREATION AND IMPLEMENTATION OF REPOSITORIES AND SERVICES
 After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
