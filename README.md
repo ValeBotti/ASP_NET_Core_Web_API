@@ -35,7 +35,7 @@ f: integer->integer".<br>
 - **effects:** "The effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not satisfied.<br>
 
 #### 2. CREATION AND IMPLEMENTATION OF SERVICES
-After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer**.
+After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
 The goal is to improve the **separation of concerns** between the **HTTP layer** and the **application logic**.
 
 // ## OVERVIEW: Layered Web API Architecture
