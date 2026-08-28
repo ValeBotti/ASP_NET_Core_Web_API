@@ -5,6 +5,13 @@ using Microsoft.EntityFrameworkCore;
 [Route("api/[controller]")]
 public class MenuController : ControllerBase
 {
+/// <summary>
+/// Provides HTTP endpoints for managing menus.
+/// </summary>
+/// <remarks>
+/// OVERVIEW: This controller exposes operations for retrieving menu information.
+/// </remarks>
+
     private readonly AppDbContext _db;
 
     public MenuController(AppDbContext db)
@@ -12,6 +19,14 @@ public class MenuController : ControllerBase
         _db = db;
     }
 
+    /// <summary>
+    /// Retrieves the list of available menus.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// EFFECTS:
+    /// Retrieves and returns all menus in the database.
+    /// </remarks>
     [HttpGet("")]
     public IActionResult GetMenu()
     {
@@ -33,6 +48,14 @@ public class MenuController : ControllerBase
         return Ok(menu);
     }
 
+    /// <summary>
+    /// Retrieves a menu's image.
+    /// </summary>
+    /// 
+    /// <remarks>
+    /// EFFECTS:
+    /// Retrieves and returns the image associated with the specified menu identifier.
+    /// </remarks>
     [HttpGet("{mid}/image")]
     public IActionResult GetMenuImage(int mid)
     {
@@ -43,6 +66,14 @@ public class MenuController : ControllerBase
         return Ok(new { base64 = menu.Image });// Return the image data as a JSON object
     }
     
+    /// <summary>
+    /// Retrieves a menu's details.
+    /// </summary>
+    /// 
+    /// <remarks>
+    /// EFFECTS:
+    /// Retrieves and returns the details associated with the specified menu identifier.
+    /// </remarks>
     [HttpGet("{mid}")]
     public IActionResult GetMenuDetails(int mid)
     {

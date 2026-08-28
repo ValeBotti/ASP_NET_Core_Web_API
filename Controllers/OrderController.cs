@@ -5,12 +5,32 @@ using Microsoft.EntityFrameworkCore;
 [Route("api/[controller]")]
 public class OrderController : ControllerBase
 {
+/// <summary>
+/// Provides HTTP endpoints for managing orders.
+/// </summary>
+/// <remarks>
+/// OVERVIEW: This controller exposes operations for creating an order and retrieving the object's status.
+/// </remarks>
+
     private readonly AppDbContext _db;
 
     public OrderController(AppDbContext db)
     {
         _db = db;
     }
+
+    /// <summary>
+    /// Purchases an order.
+    /// </summary>
+    /// <remarks>
+    ///
+    /// MODIFIES:
+    /// The database state by inserting a new order and updating the associated
+    /// user's order information.
+    /// 
+    /// EFFECTS:
+    /// Creates an order for the user associated with the request, updates the user's order information, and returns the created order information.
+    /// </remarks>
 
     [HttpPost("{mid}/buy")]
     public IActionResult PostOrder(int mid, [FromBody] BuyOrderBody body)
@@ -86,75 +106,107 @@ public class OrderController : ControllerBase
             CurrentPosition = order.CurrentPosition
         };
 
+        var user = _db.Users.FirstOrDefault(u => u.Uid == uid);
+
+        if (user == null)
+            return NotFound($"Utente con UID {uid} non trovato.");
+
+        user.LastOid = order.Oid;
+        user.OrderStatus = order.Status;
+
+        _db.SaveChanges();
+
         return Ok(dto);
     }
 
-[HttpGet("{oid}")]
-public IActionResult GetOrder(int oid)
-{
-    var order = _db.Orders.FirstOrDefault(o => o.Oid == oid);
-    if (order == null)
-        return NotFound($"Order con OID {oid} non trovato.");
+    /// <summary>
+    /// Retrieves the current state of an order.
+    /// </summary>
+    /// <remarks>
+    ///
+    /// MODIFIES:
+    /// The order state and the associated user's order information in the database
+    /// when the delivery status changes.
+    /// 
+    /// EFFECTS:
+    /// Retrieves and determines the current delivery status and position of the order.
+    /// </remarks>
 
-    var menu = _db.Menus.FirstOrDefault(m => m.Mid == order.Mid);
-    if (menu == null)
-        return NotFound($"Menu con MID {order.Mid} non trovato.");
-
-    var creation = DateTime.Parse(order.CreationTimestamp, null, System.Globalization.DateTimeStyles.RoundtripKind).ToUniversalTime();
-    var delivery = creation.AddMinutes(menu.DeliveryTime);
-    var now = DateTime.UtcNow;
-
-    bool isCompleted = now >= delivery;
-    string status = isCompleted ? "COMPLETED" : "ON_DELIVERY";
-
-    float totalSeconds = (float)(delivery - creation).TotalSeconds;
-    float elapsedSeconds = (float)(now - creation).TotalSeconds;
-
-    float progress = totalSeconds > 0 ? elapsedSeconds / totalSeconds : 1f;
-    progress = Math.Clamp(progress, 0f, 1f);
-
-    var currentPosition = new Location
+    [HttpGet("{oid}")]
+    public IActionResult GetCurrentOrder(int oid)
     {
-        Lat = menu.Location.Lat + (order.CurrentPosition.Lat - menu.Location.Lat) * progress,
-        Lng = menu.Location.Lng + (order.CurrentPosition.Lng - menu.Location.Lng) * progress
-    };
+        var order = _db.Orders.FirstOrDefault(o => o.Oid == oid);
+        if (order == null)
+            return NotFound($"Order con OID {oid} non trovato.");
 
-    bool statusChanged = order.Status != status;
-    if (statusChanged)
-    {
-        order.Status = status;
-        order.DeliveryTimestamp = delivery.ToString("o");
-        _db.Orders.Update(order);
-        _db.SaveChanges();
+        var menu = _db.Menus.FirstOrDefault(m => m.Mid == order.Mid);
+        if (menu == null)
+            return NotFound($"Menu con MID {order.Mid} non trovato.");
+
+        var user = _db.Users.FirstOrDefault(u => u.Uid == order.Uid);
+        if (user == null)
+            return NotFound($"Utente con UID {order.Uid} non trovato.");
+
+        var creation = DateTime.Parse(order.CreationTimestamp, null, System.Globalization.DateTimeStyles.RoundtripKind).ToUniversalTime();
+        var delivery = creation.AddMinutes(menu.DeliveryTime);
+        var now = DateTime.UtcNow;
+
+        bool isCompleted = now >= delivery;
+        string status = isCompleted ? "COMPLETED" : "ON_DELIVERY";
+
+        float totalSeconds = (float)(delivery - creation).TotalSeconds;
+        float elapsedSeconds = (float)(now - creation).TotalSeconds;
+
+        float progress = totalSeconds > 0 ? elapsedSeconds / totalSeconds : 1f;
+        progress = Math.Clamp(progress, 0f, 1f);
+
+        var currentPosition = new Location
+        {
+            Lat = menu.Location.Lat + (order.CurrentPosition.Lat - menu.Location.Lat) * progress,
+            Lng = menu.Location.Lng + (order.CurrentPosition.Lng - menu.Location.Lng) * progress
+        };
+
+        bool statusChanged = order.Status != status;
+        if (statusChanged)
+        {
+            order.Status = status;
+            order.DeliveryTimestamp = delivery.ToString("o");
+            _db.Orders.Update(order);
+            _db.SaveChanges();
+
+            user.LastOid = order.Oid;
+            user.OrderStatus = order.Status;
+
+            _db.SaveChanges();
+        }
+
+        if (isCompleted)
+        {
+            return Ok(new OrderCompletedDto
+                {
+                    Oid = order.Oid,
+                    Uid = order.Uid,
+                    Mid = order.Mid,
+                    CreationTimestamp = order.CreationTimestamp,
+                    Status = status,
+                    DeliveryLocation = order.DeliveryLocation,
+                    DeliveryTimestamp = delivery.ToString("o"),
+                    CurrentPosition = currentPosition
+                });
+        }
+        else 
+        {
+            return Ok(new OrderOnDeliveryDto
+                {
+                    Oid = order.Oid,
+                    Uid = order.Uid,
+                    Mid = order.Mid,
+                    CreationTimestamp = order.CreationTimestamp,
+                    Status = status,
+                    DeliveryLocation = order.DeliveryLocation,
+                    ExpectedDeliveryTimestamp = delivery.ToString("o"),
+                    CurrentPosition = currentPosition
+                });
+        }
     }
-
-    if (isCompleted)
-    {
-        return Ok(new OrderOnDeliveryDto
-            {
-                Oid = order.Oid,
-                Uid = order.Uid,
-                Mid = order.Mid,
-                CreationTimestamp = order.CreationTimestamp,
-                Status = status,
-                DeliveryLocation = order.DeliveryLocation,
-                DeliveryTimestamp = delivery.ToString("o"),
-                CurrentPosition = currentPosition
-            });
-    }
-    else
-    {
-        return Ok(new OrderCompletedDto
-            {
-                Oid = order.Oid,
-                Uid = order.Uid,
-                Mid = order.Mid,
-                CreationTimestamp = order.CreationTimestamp,
-                Status = status,
-                DeliveryLocation = order.DeliveryLocation,
-                ExpectedDeliveryTimestamp = delivery.ToString("o"),
-                CurrentPosition = currentPosition
-            });
-    }
-}
 }

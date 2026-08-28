@@ -4,6 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class SessionController : ControllerBase
 {
+/// <summary>
+/// Provides HTTP endpoints for managing user's sessions.
+/// </summary>
+/// <remarks>
+/// OVERVIEW: This controller exposes operations for creating a user session.
+/// </remarks>
+
     private readonly AppDbContext _db;
 
     public SessionController(AppDbContext db)
@@ -11,6 +18,17 @@ public class SessionController : ControllerBase
         _db = db;
     }
     
+    /// <summary>
+    /// Creates a user and an associated session.
+    /// </summary>
+    /// <remarks>
+    ///
+    /// MODIFIES:
+    /// The database state by inserting a new user and an associated session.
+    /// 
+    /// EFFECTS:
+    /// Creates a new user and an associated session, and returns their identifiers.
+    /// </remarks>
     [HttpPost("create")]
     public IActionResult CreateSession()
     {

@@ -7,6 +7,6 @@ public class OrderOnDeliveryDto
     public required string Status { get; set; }
     public required Location DeliveryLocation { get; set; }
     public required Location CurrentPosition { get; set; }
-    public required string DeliveryTimestamp { get; set; }
+    public required string ExpectedDeliveryTimestamp { get; set; }
     
 }

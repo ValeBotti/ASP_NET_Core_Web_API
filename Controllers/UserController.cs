@@ -4,6 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
+/// <summary>
+/// Provides HTTP endpoints for managing users.
+/// </summary>
+/// <remarks>
+/// OVERVIEW: This controller exposes operations for managing user accounts.
+/// </remarks>
+
     private readonly AppDbContext _db;
 
     public UserController(AppDbContext db)
@@ -11,6 +18,14 @@ public class UserController : ControllerBase
         _db = db;
     }
 
+    /// <summary>
+    /// Retrieves a user by their ID.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// EFFECTS:
+    /// Retrieves and returns the user associated with the specified unique identifier.
+    /// </remarks>
     [HttpGet("{uid}")]
     public IActionResult GetUser(int uid)
     {
@@ -20,6 +35,17 @@ public class UserController : ControllerBase
         return Ok(user);
     }
 
+    /// <summary>
+    /// Updates a user's information.
+    /// </summary>
+    /// <remarks>
+    ///
+    /// MODIFIES:
+    /// The database state by updating the user's information.
+    /// 
+    /// EFFECTS:
+    /// Updates a user's information and returns the updated user's information.
+    /// </remarks>
     [HttpPut("{uid}")]
     public IActionResult UpdateUser(int uid, [FromBody] UpdateUserBody dto)
     {
