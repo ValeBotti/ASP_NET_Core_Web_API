@@ -36,7 +36,7 @@ f: integer->integer".<br>
 
 #### 2. CREATION AND IMPLEMENTATION OF REPOSITORIES AND SERVICES
 After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
-The goal is to improve the **separation of concerns** between the **HTTP layer** and the **application logic**.
+The goal is to improve the **separation of concerns** between the **HTTP layer** and the **application logic** and the **database access**.
 
 ## OVERVIEW: Layered Web API Architecture
 - #### Presentation Layer - Controller
