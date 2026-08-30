@@ -11,9 +11,6 @@ That meant I couldn't see my application working properly, and that's why I deci
 > I've studied and created this project by myself;
 > This very basic project is a nice exercise that allows me to move beyond the stage where everything simply works to a project that will leave me with a set of valuable lessons on a complex backend framework.
 
-In the middle of drafting this document, I wondered if what I was writing was actually making sense. I remembered that when I studied database design and web applications, we always started by reading the descriptive documentation; should I change my approach?
--> Apparently, this framework, like Spring Boot and Laravel, can be described as an **opinionated framework**; that means it follows a set of rules that came from several decades of software engineering research. Interesting, isn't it?
-
 # REFACTORING:
 
 ## 1. ABSTRACTION BY SPECIFICATION / (DESIGN BY CONTRACT)
@@ -39,18 +36,16 @@ f: integer->integer".<br>
 
 ## 2. DEFINING THE DOMAIN AND ENTITIES' ROLES - THE E-R SCHEMA
 After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
-The goal is to improve the **separation of concerns** between the **HTTP layer** and the **application logic** and the **database access**.
-Where should someone start? I believed I needed to rewrite controllers, but the more I looked into it, the further I went from the controller implementation.
-I decided to go back to the Data Layer, the first thing I worked on when I started programming...
+Where should someone start? I believed I needed to rewrite controllers, but the more I looked into it, the further I went from the controller implementation...
 
-> I want to add this remark: the ASP.NET Core Web API framework is pushing me down to the data layer; probably it's trivial for someone who already knows the framework, but it's not that obvious when you're learning it from scratch.
+> The ASP.NET Core Web API framework is pushing me down to the data layer; probably it's trivial for someone who already knows the framework, but it's not that obvious when you're learning it from scratch.
 > So I decided to look into it because it couldn’t be random.
 > That’s when I found other interesting concepts: the **dependency rule**, **domain‑driven design**, and **onion architecture**, which ASP.NET Core Web API naturally encourages by design.
 > This might be a good time to read Clean Architecture by Robert C. Martin…
+> -> Apparently, this framework, like Spring Boot and Laravel, can be described as an **opinionated framework**; that means it follows a set of rules that came from several decades of software engineering research. Interesting, isn't it?
 
 -> Moral of the story: I went back to the **Domain layer**.
 
-**Dependency rule:** the dependency must point towards the domain controller -> service -> repository -> domain.<br>
 Does the domain layer depend on anything? Technically, no. But to build it properly, you must have a clear idea of your data model - the conceptual model; let's get back to it.<br>
 Now I desperately need my DB abstraction, and I regret my laziness when I chose not to draw it!
 I chose to prioritize seeing my Kotlin app working, and saw the flip side of the coin of the "outcome-oriented" approach, neglecting abstraction.<br>
