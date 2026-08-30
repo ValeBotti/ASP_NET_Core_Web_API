@@ -70,9 +70,52 @@ Should I regret it? I think, in this case, the goal was simply to move forward. 
 ### TEENY-TINY E-R SCHEMA
 ![E-R SCHEMA](img/schema.jpg)
 
+### TEENY-TINY RELATIONAL SCHEMA
+
+- uidSid(🔑 **sid**, 🔗 uid)
+
+- user(
+    🔑 **uid**, 
+    first_name, 
+    last_name, 
+    card_full_name, 
+    card_number, 
+    card_expire_month, 
+    card_expire_year, 
+    card_cvv, 
+    🟨🔗 last_oid, 
+    🟪🔗 order_status
+)
+
+- menu(
+    🔑 **mid**, 
+    name, 
+    price, 
+    location_lat, 
+    location_lng, 
+    image_version, 
+    image, 
+    short_description, 
+    long_description, 
+    🟩🔗 delivery_time
+)
+
+- order(
+    🟨🔑 **oid**, 
+    🔗 uid, 
+    🔗 mid, 
+    creation_timestamp, 
+    🟪🔗 status, 
+    delivery_location_lat, 
+    delivery_location_lng, 
+    🟩🔗 expected_delivery_timestamp, 
+    delivery_timestamp, 
+    current_position_lat, 
+    current_position_lng
+)
+
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
 #### 2. Repository Layer - DB access
 #### 3. Application / Service Layer - Service
 #### 4. Presentation Layer - Controller
-
