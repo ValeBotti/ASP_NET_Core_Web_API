@@ -68,7 +68,7 @@ Should I regret it? I think, in this case, the goal was simply to move forward. 
 - **Menu - is referenced by -> Order -** each Menu can be referred to by zero or more Orders (0, N).
 
 ### TEENY-TINY E-R SCHEMA
-![E-R SCHEMA](img/schema.png)
+![E-R SCHEMA](img/schema.jpg)
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
