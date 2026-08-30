@@ -71,48 +71,49 @@ Should I regret it? I think, in this case, the goal was simply to move forward. 
 ![E-R SCHEMA](img/schema.jpg)
 
 ### TEENY-TINY RELATIONAL SCHEMA
-
-- uidSid(🔑 **sid**, 🔗 uid)
+```HTML
+- uidSid(🔑 sid, 🔗 uid)
 
 - user(
-    🔑 **uid**, <br>
-    first_name, <br>
-    last_name, <br>
-    card_full_name, <br>
-    card_number, <br>
-    card_expire_month, <br>
-    card_expire_year, <br>
-    card_cvv, <br>
-    🟨🔗 last_oid, <br>
+    🔑 uid,
+    first_name,
+    last_name,
+    card_full_name,
+    card_number,
+    card_expire_month,
+    card_expire_year,
+    card_cvv,
+    🟨🔗 last_oid,
     🟪🔗 order_status
 )
 
 - menu(
-    🔑 **mid**, <br>
-    name, <br>
-    price, <br>
-    location_lat, <br>
-    location_lng, <br>
-    image_version, <br>
-    image, <br>
-    short_description, <br>
-    long_description, <br>
+    🔑 mid,
+    name,
+    price,
+    location_lat,
+    location_lng,
+    image_version,
+    image,
+    short_description,
+    long_description,
     🟩🔗 delivery_time
 )
 
 - order(
-    🟨🔑 **oid**, <br>
-    🔗 uid, <br>
-    🔗 mid, <br>
-    creation_timestamp, <br>
-    🟪🔗 status, <br>
-    delivery_location_lat, <br>
-    delivery_location_lng, <br>
-    🟩🔗 expected_delivery_timestamp, <br>
-    delivery_timestamp, <br>
-    current_position_lat, <br>
+    🟨🔑 oid,
+    🔗 uid,
+    🔗 mid,
+    creation_timestamp,
+    🟪🔗 status,
+    delivery_location_lat,
+    delivery_location_lng,
+    🟩🔗 expected_delivery_timestamp,
+    delivery_timestamp,
+    current_position_lat,
     current_position_lng
 )
+```
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
