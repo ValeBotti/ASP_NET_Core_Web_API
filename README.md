@@ -11,10 +11,13 @@ That meant I couldn't see my application working properly, and that's why I deci
 > I've studied and created this project by myself;
 > This very basic project is a nice exercise that allows me to move beyond the stage where everything simply works to a project that will leave me with a set of valuable lessons on a complex backend framework.
 
+In the middle of drafting this document, I wondered if what I was writing was actually making sense. I remembered that when I studied database design and web applications, we always started by reading the descriptive documentation; should I change my approach?
+-> Apparently, this framework, like Spring Boot and Laravel, can be described as an **opinionated framework**; that means it follows a set of rules that came from several decades of software engineering research. Interesting, isn't it?
+
 # REFACTORING:
 
-### 1. ABSTRACTION BY SPECIFICATION / CONTRACT
-When looking at my project, I couldn't be satisfied with my "OrderController" class; I knew that my methods were taking way too many responsibilities, and even I couldn't comprehend it at first glance.<br>
+## 1. ABSTRACTION BY SPECIFICATION / (DESIGN BY CONTRACT)
+When looking at my project, I couldn't be satisfied with my "OrderController" class; I knew that my methods were taking on way too many responsibilities, and even I couldn't comprehend it at first glance.<br>
 The first thing I thought was that I clearly wasn't using the framework's standard architecture in the best way, so I wanted to add a few comments to help me out in the process of **separation of concerns**.<br>
 
 Right away, I remembered my OOP class in Java and Liskov's book:
@@ -34,7 +37,7 @@ f: integer->integer".<br>
 - **modifies:** "The modifies clause lists the names of any inputs that are modified by the procedure. If some inputs are modified, we say the procedure has a side effect. The modifies clause can be omitted when no inputs are modified".<br>
 - **effects:** "The effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not satisfied".<br>
 
-### 2. DEFINING THE DOMAIN AND ENTITIES' ROLES - GETTING BACK TO THE E-R
+## 2. DEFINING THE DOMAIN AND ENTITIES' ROLES - GETTING BACK TO THE E-R
 After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
 The goal is to improve the **separation of concerns** between the **HTTP layer** and the **application logic** and the **database access**.
 Where should someone start? I believed I needed to rewrite controllers, but the more I looked into it, the further I went from the controller implementation.
