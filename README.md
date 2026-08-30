@@ -34,12 +34,22 @@ f: integer->integer".<br>
 - **modifies:** "The modifies clause lists the names of any inputs that are modified by the procedure. If some inputs are modified, we say the procedure has a side effect. The modifies clause can be omitted when no inputs are modified".<br>
 - **effects:** "The effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not satisfied".<br>
 
-#### 2. CREATION AND IMPLEMENTATION OF REPOSITORIES AND SERVICES
+#### 2. DEFINING THE DOMAIN AND ENTITIES' ROLES
 After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
 The goal is to improve the **separation of concerns** between the **HTTP layer** and the **application logic** and the **database access**.
+Where should someone start? I believed I needed to rewrite controllers, but the more I looked into it, the further I went from the controller implementation.
+I decided to go back to the Data Layer, the first thing I worked on when I started programming...
+
+> I want to add this remark: the ASP.NET Core Web API framework is pushing me down to the data layer; probably it's trivial for someone who already knows the framework, but it's not that obvious when you're learning it from scratch.
+> So I decided to look into it, because it couldn’t be random.
+> That’s when I found other interesting concepts: the **dependency rule**, **domain‑driven design**, and **onion architecture**, which ASP.NET Core Web API naturally encourages by design.
+> This might be a good time to read Clean Architecture by Robert C. Martin…
+
+-> Moral of the story: I went back to the **Domain layer**.
 
 ## OVERVIEW: Layered Web API Architecture
-- #### Presentation Layer - Controller
-- #### Application / Service Layer - Service
-- #### Repository Layer - DB access
-- #### Domain / Data Layer - Models + DbContext
+#### 1. Domain / Data Layer - Models + DbContext
+#### 2. Repository Layer - DB access
+#### 3. Application / Service Layer - Service
+#### 4. Presentation Layer - Controller
+
