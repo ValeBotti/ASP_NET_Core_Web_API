@@ -51,7 +51,24 @@ Now I desperately need my DB abstraction, and I regret my laziness when I chose 
 I chose to prioritize seeing my Kotlin app working, and saw the flip side of the coin of the "outcome-oriented" approach, neglecting abstraction.<br>
 Should I regret it? I think, in this case, the goal was simply to move forward. Would I do it again? Yes.
 
+### Descriptive documentation
 
+**Entities:**
+- **UidSid —** the session identity used by the client.
+- **User -** the person using the app.
+- **Menu -** the plate available for purchase.
+- **Order -** the purchase made by a user.
+
+**Relationships:**
+- **UidSid - identifies -> User -** a UidSid identifies the session of a specific User (1, 1).
+- **User - is identified by -> UidSid -** a User is identified by at least one UidSid (1, N).
+- **User - places -> Order -** a User places zero or more Orders (0, N).
+- **Order - is placed by -> User -** one Order is placed by one User (1, 1).
+- **Order - refers to -> Menu -** each Order refers to one Menu (1, 1).
+- **Menu - is referenced by -> Order -** each Menu can be referred to by zero or more Orders (0, N).
+
+### TEENY-TINY E-R SCHEMA
+![E-R SCHEMA](img/schema.png)
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
