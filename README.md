@@ -47,7 +47,7 @@ I decided to go back to the Data Layer, the first thing I worked on when I start
 
 -> Moral of the story: I went back to the **Domain layer**.
 
-** Dependency rule:** the dependency must point towards the domain controller -> service -> repository -> domain.<br>
+**Dependency rule:** the dependency must point towards the domain controller -> service -> repository -> domain.<br>
 Does the domain layer depend on anything? Technically, no. But to build it properly, you must have a clear idea of your data model - the conceptual structure; let's get back to it.<br>
 Now I desperately need my DB abstraction, and I regret my laziness when I chose not to draw it!
 I chose to prioritize seeing my Kotlin app working, and saw the flip side of the coin of the "outcome-oriented" approach, neglecting abstraction.<br>
