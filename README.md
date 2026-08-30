@@ -34,7 +34,7 @@ f: integer->integer".<br>
 - **modifies:** "The modifies clause lists the names of any inputs that are modified by the procedure. If some inputs are modified, we say the procedure has a side effect. The modifies clause can be omitted when no inputs are modified".<br>
 - **effects:** "The effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not satisfied".<br>
 
-## 2. DEFINING THE DOMAIN AND ENTITIES' ROLES - THE E-R SCHEMA
+## 2. DEFINING THE DOMAIN AND ENTITIES' ROLES - BACK TO THE E-R SCHEMA
 After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
 Where should someone start? I believed I needed to rewrite controllers, but the more I looked into it, the further I went from the controller implementation...
 
@@ -114,6 +114,8 @@ Should I regret it? I think, in this case, the goal was simply to move forward. 
     current_position_lng
 )
 ```
+## 3. IMPLEMENTATION
+### Domain Layer
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
