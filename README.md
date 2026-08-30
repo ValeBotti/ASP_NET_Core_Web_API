@@ -34,7 +34,7 @@ f: integer->integer".<br>
 - **modifies:** "The modifies clause lists the names of any inputs that are modified by the procedure. If some inputs are modified, we say the procedure has a side effect. The modifies clause can be omitted when no inputs are modified".<br>
 - **effects:** "The effects clause describes the behavior of the procedure for all inputs not ruled out by the requires clause. It must define what outputs are produced and also what modifications are made to the inputs listed in the modifies clause. The effect clause is written under the assumption that the requires clause is satisfied, and it says nothing about the procedure's behavior when the requires clause is not satisfied".<br>
 
-#### 2. DEFINING THE DOMAIN AND ENTITIES' ROLES
+#### 2. DEFINING THE DOMAIN AND ENTITIES' ROLES - GETTING BACK TO THE E-R
 After defining the specifications of the Controller operations, the next step is to refactor the application by introducing a **Service Layer** and a **Repository layer**.
 The goal is to improve the **separation of concerns** between the **HTTP layer** and the **application logic** and the **database access**.
 Where should someone start? I believed I needed to rewrite controllers, but the more I looked into it, the further I went from the controller implementation.
@@ -47,7 +47,13 @@ I decided to go back to the Data Layer, the first thing I worked on when I start
 
 -> Moral of the story: I went back to the **Domain layer**.
 
-## OVERVIEW: Layered Web API Architecture
+** Dependency rule:** the dependency must point towards the domain controller -> service -> repository -> domain.<br>
+Does the domain layer depend on anything? Technically, no. But to build it properly, you must have a clear idea of your data model - the conceptual structure; let's get back to it.<br>
+Now I desperately need my DB abstraction, and I regret my laziness when I chose not to draw it!
+I chose to prioritize seeing my Kotlin app working, and saw the flip side of the coin of the "outcome-oriented" approach, neglecting abstraction.<br>
+Should I regret it? I think, in this case, the goal was simply to move forward. Would I do it again? Yes.
+
+# OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
 #### 2. Repository Layer - DB access
 #### 3. Application / Service Layer - Service
