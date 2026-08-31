@@ -165,7 +165,7 @@ Here I am, understanding the reason why we have "Models" and "DTOs"; now it make
 
 -> With the domain model guiding my decisions, something clicked; I’m starting to think like a backend developer, and the UX - which I've always been very fond of - matters less and less. The focus is the data and its meaning, and the final purpose becomes secondary.<br>
 
-- Now I need constraints; I started to think about what could end up in my bd from the API I had implemented, but it doesn't make any sense to think that way. Preventing mistakes or malicious inputs: you could think about it all day and  still end up not covering anything.<br>
+- Now I need constraints; I started to think about what could end up in my database from the API I needed to block any weird input, but it doesn't make any sense to think that way. Preventing mistakes or malicious inputs: you could think about it all day and  still end up not covering anything.<br>
 -> **The point isn't to foresee every possible input; it is to PROTECT the data's domain.** <br>
 
 # OVERVIEW: Layered Web API Architecture - description
