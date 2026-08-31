@@ -72,23 +72,21 @@ Should I regret it? I think, in this case, the goal was simply to move forward. 
 
 ### TEENY-TINY RELATIONAL SCHEMA
 ```HTML
-- uidSid(🔑 sid, 🔗 uid)
+- uid_sid(🔑 id, 🔗 user_id)
 
 - user(
-    🔑 uid,
+    🔑 id,
     first_name,
     last_name,
     card_full_name,
     card_number,
     card_expire_month,
     card_expire_year,
-    card_cvv,
-    🟨🔗 last_oid,
-    🟪🔗 order_status
+    card_cvv
 )
 
 - menu(
-    🔑 mid,
+    🔑 id,
     name,
     price,
     location_lat,
@@ -97,28 +95,94 @@ Should I regret it? I think, in this case, the goal was simply to move forward. 
     image,
     short_description,
     long_description,
-    🟩🔗 delivery_time
+    delivery_time
 )
 
 - order(
-    🟨🔑 oid,
-    🔗 uid,
-    🔗 mid,
+    🔑 id,
+    🔗 user_id,
+    🔗 menu_id,
     creation_timestamp,
-    🟪🔗 status,
-    delivery_location_lat,
-    delivery_location_lng,
-    🟩🔗 expected_delivery_timestamp,
+    status,
     delivery_timestamp,
     current_position_lat,
     current_position_lng
 )
 ```
+**Domain constraints (with types):**
+
+**uid_sid**
+- **sid_uid.id:** string, not null.
+- **sid_uid.user_id:** int, not null, user_id > 0.
+
+**user**
+- **user.id:** int, not null, id > 0.
+- **user.first_name:** string, nullable.
+- **user.last_name:** string, nullable.
+- **user.card_full_name:** string, nullable.
+- **user.card_number:** string, nullable, len = 16.
+- **user.card_expire_month:** int, nullable, between 1 and 12.
+- **user.card_expire_year:** int, nullable, between the current year and the current year + 5.
+- **user.card_cvv:** string, nullable, len = 3.
+
+-> cross-field constraint: (card_expire_year * 12 + card_expire_month) >= (current year * 12 + current month)
+
+**menu**
+- **menu.id:** int, not null, id > 0.
+- **menu.name:** string, not null.
+- **menu.price:** float, not null, price >= 0.
+- **menu.location_lat:** float, not null, -90 <= lat <= 90.
+- **menu.location_lng:** float, not null, -180 <= lng <= 180.
+- **menu.image_version:** int, not null, image_version >= 0.
+- **menu.image:** string, not null.
+- **menu.short_description:** string, not null.
+- **menu.long_description:** string, not null.
+- **menu.delivery_time:** int, not null, delivery_time >= 0.
+
+**order**
+- **order.id:** int, not null, id > 0.
+- **order.user_id:** int, not null, user_id > 0.
+- **order.menu_id:** int, not null, menu_id > 0.
+- **order.creation_timestamp:** datetime, not null. (assigned by the DB, not the application).
+- **order.status:** enum, not null, {ON_DELIVERY, COMPLETED}.
+- **order.delivery_timestamp:** datetime, nullable.
+- **order.current_position_lat:** float, not null, -90 <= lat <= 90.
+- **order.current_position_lng:** float, not null, -180 <= lng <= 180.
+
+-> cross-field constraint: <br>
+status = ON_DELIVERY ⟺ delivery_timestamp IS NULL <br>
+status = COMPLETED ⟺ delivery_timestamp IS NOT NULL
+
+delivery_timestamp >= creation_timestamp
+
+**Like a function, a DB model is described also by its data's domain; a DB model without its constraints is not wrong; it's a different model.**
+
 ## 3. IMPLEMENTATION
 ### Domain Layer
+When I first implemented the domain model, I tried to reconstruct it based on the APIs I remembered using in the frontend. I made another mistake: I modeled the backend starting from the presentation layer, not the domain. The domain model must always be the primary focus and the foundation of the entire architecture.<br>
+
+Here I am, understanding the reason why we have "Models" and "DTOs"; now it makes sense.<br>
+
+-> With the domain model guiding my decisions, something clicked; I’m starting to think like a backend developer, and the UX - which I've always been very fond of - matters less and less. The focus is the data and its meaning, and the final purpose becomes secondary.<br>
+
+- Now I need constraints; I started to think about what could end up in my bd from the API I had implemented, but it doesn't make any sense to think that way. Preventing mistakes or malicious inputs: you could think about it all day and  still end up not covering anything.<br>
+-> **The point isn't to foresee every possible input; it is to PROTECT the data's domain.** <br>
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
+```
+ASP.NET_Core_Web_API
+                    └── Data/
+                            └── AppDbContext.cs
+                    └── Migrations/
+                    └── Models/
+                              └── Location.cs
+                              └── Menu.cs
+                              └── Order.cs
+                              └── UidSid.cs
+                              └── User.cs
+                    └── Program.cs
+```
 #### 2. Repository Layer - DB access
 #### 3. Application / Service Layer - Service
 #### 4. Presentation Layer - Controller
