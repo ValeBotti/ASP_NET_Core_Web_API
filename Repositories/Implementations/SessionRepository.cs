@@ -1,4 +1,4 @@
-public class SidUidRepository : ISessionRepository
+public class SessionRepository : ISessionRepository
 {
 /// <remarks>
 /// OVERVIEW: This repository performs persistence operations for the uid_sid entity.
@@ -6,7 +6,7 @@ public class SidUidRepository : ISessionRepository
 
     private readonly AppDbContext _db;
 
-    public SidUidRepository(AppDbContext db)
+    public SessionRepository(AppDbContext db)
     {
         _db = db;
     }
