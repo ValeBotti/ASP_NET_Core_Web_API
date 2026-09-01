@@ -175,7 +175,12 @@ Preventing mistakes or malicious inputs: you could think about it all day and  s
 The domain layer is tied to the database, especially in my application where I used the code-first method.
 Nothing else should be there. So, where should my seeder class go? The answer is: the repository layer, which is dedicated to "using" (and, in my case, populating) the DB. <br>
 Besides the seeder, every data-access operation must be here. It's like creating functions that encapsulate an SQL query. Inputs are query params, and the output is whatever the SQL query returns. <br>
-Plus, it's nice to have modularity and replicability within them.
+Plus, it's nice to have modularity and replicability within them. <br>
+
+We are in the implementation phase, and Liskov comes in handy again: the importance of a method's signature. <br>
+-> The signature says almost everything you need to know about the persistence operation: the needed parameters and the outcome. <br>
+
+Now let's read my controllers' XML documentation; there I'll find what data my API needs to be retrieved.
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
