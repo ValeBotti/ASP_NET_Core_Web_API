@@ -180,7 +180,9 @@ Plus, it's nice to have modularity and replicability within them. <br>
 We are in the implementation phase, and Liskov comes in handy again: the importance of a method's signature. <br>
 -> The signature says almost everything you need to know about the persistence operation: the needed parameters and the outcome. <br>
 
-Now let's read my controllers' XML documentation; there I'll find what data my API needs to be retrieved.
+Now let's read my controllers' XML documentation; there I'll find what data my API needs to be retrieved. <br>
+
+-> I've decided to remove Liskov's comments from the controller in favor of the repository methods where actions take place.
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
