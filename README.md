@@ -173,16 +173,17 @@ Here I am, understanding the reason why we have "Models" and "DTOs"; now it make
 ```
 ASP.NET_Core_Web_API
                     └── Data/
-                            └── AppDbContext.cs
-                    └── Migrations/
-                    └── Models/
+                            └── AppDbContext.cs -> map POCOs to  SQL Server naming conventions + constraints + owned types + lazy loading
+                    └── Migrations/ -> DB edit history (I dropped the whole previous DB)
+                    └── Models/ -> POCOs
                               └── Location.cs
                               └── Menu.cs
                               └── Order.cs
                               └── UidSid.cs
                               └── User.cs
-                    └── Program.cs
+                    └── Program.cs -> DB connection
 ```
 #### 2. Repository Layer - DB access
+
 #### 3. Application / Service Layer - Service
 #### 4. Presentation Layer - Controller
