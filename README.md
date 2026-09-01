@@ -200,10 +200,12 @@ ASP.NET_Core_Web_API
                     └── IMenuRepository.cs
                     └── IOrderRepository.cs
                     └── IUserRepository.cs
+                    └── IUidSidRepository.cs
             └── Implementations/
                     └── MenuRepository.cs
                     └── OrderRepository.cs
                     └── UserRepository.cs
+                    └── UidSidRepository.cs
             └── Seed/
                     └── MenuSeeder.cs
                     └── menu.json
