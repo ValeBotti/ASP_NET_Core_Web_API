@@ -11,57 +11,33 @@ public class SessionController : ControllerBase
 /// OVERVIEW: This controller exposes operations for creating a user session.
 /// </remarks>
 
-    private readonly AppDbContext _db;
+    private readonly ISessionRepository _sessionRepository;
 
-    public SessionController(AppDbContext db)
+    public SessionController(ISessionRepository sessionRepository)
     {
-        _db = db;
+        _sessionRepository = sessionRepository;
     }
-    /*
+
+
     /// <summary>
+    /// POST /api/session/create
     /// Creates a user and an associated session.
     /// </summary>
     /// <remarks>
-    ///
-    /// MODIFIES:
-    /// The database state by inserting a new user and an associated session.
     /// 
     /// EFFECTS:
-    /// Creates a new user and an associated session, and returns their identifiers.
+    /// Returns the generated session identifier and the user identifier.
     /// </remarks>
     [HttpPost("create")]
-    public IActionResult CreateSession()
+    public async Task<IActionResult> CreateSession()
     {
-
-        var user = new User
-        {
-            FirstName = null,
-            LastName = null,
-            CardFullName = null,
-            CardNumber = null,
-            CardExpireMonth =  null,
-            CardExpireYear = null,
-            CardCVV = null
-        };
-
-        _db.Users.Add(user);
-        _db.SaveChanges();
-
-        string sid = Guid.NewGuid().ToString();
-
-        var uidSid = new UidSid
-        {
-            Sid = sid,
-            Uid = user.Uid
-        };
-
-        _db.UidSids.Add(uidSid);
-        _db.SaveChanges();
+        var (uid, sid) = await _sessionRepository.CreateSessionAsync();
 
         return Ok(new
         {
-            sid = sid,
-            uid = user.Uid
+            uid,
+            sid
         });
-    }*/
+    }
+
 }
