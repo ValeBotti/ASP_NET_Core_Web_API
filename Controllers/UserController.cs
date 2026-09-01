@@ -17,7 +17,7 @@ public class UserController : ControllerBase
     {
         _db = db;
     }
-/*
+
     /// <summary>
     /// Retrieves a user by their ID.
     /// </summary>
@@ -68,5 +68,5 @@ public class UserController : ControllerBase
         _db.SaveChanges();
 
         return Ok(user);
-    }*/
+    }
 }

@@ -21,13 +21,8 @@ public class SessionController : ControllerBase
 
     /// <summary>
     /// POST /api/session/create
-    /// Creates a user and an associated session.
-    /// </summary>
-    /// <remarks>
-    /// 
-    /// EFFECTS:
     /// Returns the generated session identifier and the user identifier.
-    /// </remarks>
+    /// </summary>
     [HttpPost("create")]
     public async Task<IActionResult> CreateSession()
     {
