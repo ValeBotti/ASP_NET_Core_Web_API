@@ -165,8 +165,17 @@ Here I am, understanding the reason why we have "Models" and "DTOs"; now it make
 
 -> With the domain model guiding my decisions, something clicked; I’m starting to think like a backend developer, and the UX - which I've always been very fond of - matters less and less. The focus is the data and its meaning, and the final purpose becomes secondary.<br>
 
-- Now I need constraints; I started to think about what could end up in my database from the API I needed to block any weird input, but it doesn't make any sense to think that way. Preventing mistakes or malicious inputs: you could think about it all day and  still end up not covering anything.<br>
+- Now I need constraints; I started to think about what could end up in my database from the API. I needed to block any strange input, but it doesn't make any sense to think that way.<br>
+Preventing mistakes or malicious inputs: you could think about it all day and  still end up not covering anything.<br>
 -> **The point isn't to foresee every possible input; it is to PROTECT the data's domain.** <br>
+
+### Repository Layer <br>
+-> Seeder and DB access. <br>
+
+The domain layer is tied to the database, especially in my application where I used the code-first method.
+Nothing else should be there. So, where should my seeder class go? The answer is: the repository layer, which is dedicated to "using" (and, in my case, populating) the DB. <br>
+Besides the seeder, every data-access operation must be here. It's like creating functions that encapsulate an SQL query. Inputs are query params, and the output is whatever the SQL query returns. <br>
+Plus, it's nice to have modularity and replicability within them.
 
 # OVERVIEW: Layered Web API Architecture - description
 #### 1. Domain / Data Layer - Models + DbContext
