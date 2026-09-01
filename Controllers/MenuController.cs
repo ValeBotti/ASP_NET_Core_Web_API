@@ -18,7 +18,7 @@ public class MenuController : ControllerBase
     {
         _db = db;
     }
-
+/*
     /// <summary>
     /// Retrieves the list of available menus.
     /// </summary>
@@ -97,5 +97,5 @@ public class MenuController : ControllerBase
             return NotFound();
 
         return Ok(menu);
-    }
+    }*/
 }

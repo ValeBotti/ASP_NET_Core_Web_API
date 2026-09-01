@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 public class Menu
 {
     [Key]
-    public int Mid { get; set; }
+    public int Id { get; set; }
 
     public required string Name { get; set; }
 

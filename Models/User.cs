@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 public class User
 {
     [Key]
-    public int Uid { get; set; }
+    public int Id { get; set; }
 
     public string? FirstName { get; set; }
 
@@ -18,9 +18,5 @@ public class User
     public int? CardExpireYear { get; set; }
 
     public string? CardCVV { get; set; }
-
-    public int? LastOid { get; set; }
-
-    public string? OrderStatus { get; set; }
 
 }

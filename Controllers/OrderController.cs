@@ -31,7 +31,7 @@ public class OrderController : ControllerBase
     /// EFFECTS:
     /// Creates an order for the user associated with the request, updates the user's order information, and returns the created order information.
     /// </remarks>
-
+/*
     [HttpPost("{mid}/buy")]
     public IActionResult PostOrder(int mid, [FromBody] BuyOrderBody body)
     {
@@ -131,7 +131,7 @@ public class OrderController : ControllerBase
     /// EFFECTS:
     /// Retrieves and determines the current delivery status and position of the order.
     /// </remarks>
-
+/*
     [HttpGet("{oid}")]
     public IActionResult GetCurrentOrder(int oid)
     {
@@ -208,5 +208,5 @@ public class OrderController : ControllerBase
                     CurrentPosition = currentPosition
                 });
         }
-    }
+    }*/
 }

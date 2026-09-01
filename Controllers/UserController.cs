@@ -17,7 +17,7 @@ public class UserController : ControllerBase
     {
         _db = db;
     }
-
+/*
     /// <summary>
     /// Retrieves a user by their ID.
     /// </summary>
@@ -62,11 +62,11 @@ public class UserController : ControllerBase
         user.CardExpireYear = dto.CardExpireYear ?? user.CardExpireYear;
         user.CardCVV = dto.CardCVV ?? user.CardCVV;
 
-        user.LastOid = dto.LastOid ?? user.LastOid;
-        user.OrderStatus = dto.OrderStatus ?? user.OrderStatus;
+        //user.LastOid = dto.LastOid ?? user.LastOid;
+        //user.OrderStatus = dto.OrderStatus ?? user.OrderStatus;
 
         _db.SaveChanges();
 
         return Ok(user);
-    }
+    }*/
 }

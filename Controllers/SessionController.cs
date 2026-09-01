@@ -17,7 +17,7 @@ public class SessionController : ControllerBase
     {
         _db = db;
     }
-    
+    /*
     /// <summary>
     /// Creates a user and an associated session.
     /// </summary>
@@ -63,5 +63,5 @@ public class SessionController : ControllerBase
             sid = sid,
             uid = user.Uid
         });
-    }
+    }*/
 }
