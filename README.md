@@ -185,6 +185,10 @@ Now let's read my controllers' XML documentation; there I'll find what data my A
 -> I've decided to remove Liskov's comments from the controller in favor of the repository methods where actions take place.
 
 # OVERVIEW: Layered Web API Architecture - description
+
+I've decided to refactor my directories to follow this architectural structure. Since the project focuses on that, it's coherent, maybe a bit nauseating after reading this, but still. <br>
+Btw: it isn't always the best practice.
+
 #### 1. Domain / Data Layer - Models + DbContext
 ```
 ASP.NET_Core_Web_API
@@ -203,20 +207,18 @@ ASP.NET_Core_Web_API
 ```
 ASP.NET_Core_Web_API
     └── Repository/
-            └── Interfaces/
+            └── Interfaces/ -> contracts
                     └── IMenuRepository.cs
                     └── IOrderRepository.cs
-                    └── IUserRepository.cs
                     └── IUidSidRepository.cs
-            └── Implementations/
+            └── Implementations/ -> DB access
                     └── MenuRepository.cs
                     └── OrderRepository.cs
-                    └── UserRepository.cs
                     └── UidSidRepository.cs
-            └── Seed/
+            └── Seed/ -> populating DB
                     └── MenuSeeder.cs
                     └── menu.json
-            └── Images/
+            └── Images/ -> datas
                     └── avocado_toast.jpg
                     └── ...
                     .
