@@ -184,6 +184,26 @@ ASP.NET_Core_Web_API
                     └── Program.cs -> DB connection
 ```
 #### 2. Repository Layer - DB access
-
+```
+ASP.NET_Core_Web_API
+    └── Repository/
+            └── Interfaces/
+                    └── IMenuRepository.cs
+                    └── IOrderRepository.cs
+                    └── IUserRepository.cs
+            └── Implementations/
+                    └── MenuRepository.cs
+                    └── OrderRepository.cs
+                    └── UserRepository.cs
+            └── Seed/
+                    └── MenuSeeder.cs
+                    └── menu.json
+            └── Images/
+                    └── avocado_toast.jpg
+                    └── ...
+                    .
+                    .
+                    .
+```
 #### 3. Application / Service Layer - Service
 #### 4. Presentation Layer - Controller
