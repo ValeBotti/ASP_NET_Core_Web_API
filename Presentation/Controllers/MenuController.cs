@@ -14,12 +14,9 @@ public class MenuController : ControllerBase
  
     private readonly IMenuRepository _menuRepository;
 
-    private readonly AppDbContext _db;
-
-    public MenuController(IMenuRepository menuRepository, AppDbContext db)
+    public MenuController(IMenuRepository menuRepository)
     {
         _menuRepository = menuRepository;
-        _db = db;
     }
 
     /// <summary>
@@ -27,9 +24,9 @@ public class MenuController : ControllerBase
     /// Returns a list of menus.
     /// </summary>
     [HttpGet("")]
-    public IActionResult GetMenu()
+    public async Task<IActionResult> GetMenu()
     {
-        var menu = _menuRepository.GetMenu();
+        var menu = await _menuRepository.GetMenuAsync();
         return Ok(menu);
     }
 
@@ -38,13 +35,9 @@ public class MenuController : ControllerBase
     /// Returns the image associated with the specified menu identifier.
     /// </summary>
     [HttpGet("{mid}/image")]
-    public IActionResult GetMenuImage(int mid)
+    public async Task<IActionResult> GetMenuImage(int mid)
     {
-        var exists = _db.Menus.Any(m => m.Id == mid);
-        if (!exists)
-            return NotFound();
-
-        var base64 = _menuRepository.GetMenuImage(mid);
+        var base64 = await _menuRepository.GetMenuImageAsync(mid);
         return Ok(new { base64 });
     }
 
@@ -53,13 +46,9 @@ public class MenuController : ControllerBase
     /// Returns the details associated with the specified menu identifier.
     /// </summary>
     [HttpGet("{mid}")]
-    public IActionResult GetMenuDetails(int mid)
+    public async Task<IActionResult> GetMenuDetails(int mid)
     {
-        var exists = _db.Menus.Any(m => m.Id == mid);
-        if (!exists)
-            return NotFound();
-
-        var dto = _menuRepository.GetMenuDetails(mid);
+        var dto = await _menuRepository.GetMenuDetailsAsync(mid);
         return Ok(dto);
     }
 }

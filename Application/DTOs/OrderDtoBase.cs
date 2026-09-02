@@ -6,7 +6,5 @@ public abstract class OrderDtoBase
 
     public required string CreationTimestamp { get; set; }
     public required string Status { get; set; }
-
-    public required Location DeliveryLocation { get; set; }
     public required Location CurrentPosition { get; set; }
 }

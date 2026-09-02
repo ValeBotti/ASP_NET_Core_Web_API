@@ -2,8 +2,10 @@ using Microsoft.OpenApi;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
 {
@@ -32,7 +34,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
-// lowercase urls and query strings
+builder.Services.AddScoped<IUserService, UserService>();
+
 builder.Services.Configure<RouteOptions>(options =>
 {
     options.LowercaseUrls = true;
@@ -55,6 +58,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     MenuSeeder.Seed(db);
+
 }
 
 // Configure the HTTP request pipeline.
@@ -63,6 +67,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseExceptionHandler("/error");
 
 app.UseCors("AllowAll");
 

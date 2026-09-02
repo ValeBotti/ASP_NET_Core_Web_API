@@ -1,5 +1,6 @@
 public interface IOrderService
 {
-    Task<OrderBoughtDto> CreateOrderAsync(int mid, BuyOrderBody body);
+    Task<OrderOnDeliveryDto> CreateOrderAsync(int mid, BuyOrderBody body);
     Task<OrderDtoBase> GetCurrentOrderAsync(int oid);
+    
 }

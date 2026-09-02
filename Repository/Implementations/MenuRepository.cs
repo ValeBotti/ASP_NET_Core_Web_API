@@ -13,6 +13,21 @@ public class MenuRepository : IMenuRepository
         _db = db;
     }
 
+    
+    /// <summary>
+    /// Retrieves menu information by its identifier.
+    /// </summary>
+    /// <remarks>
+    /// EFFECTS:
+    /// Queries the database and returns the menu associated with the specified identifier.
+    /// </remarks>
+    public async Task<Menu?> GetMenuByIdAsync(int mid)
+    {
+        return await _db.Menus
+            .AsNoTracking()
+            .FirstOrDefaultAsync(m => m.Id == mid);
+    }
+
     /// <summary>
     /// Retrieves all menus.
     /// </summary>
@@ -20,9 +35,9 @@ public class MenuRepository : IMenuRepository
     /// EFFECTS:
     /// Queries the database and returns all menus mapped to MenuListDto.
     /// </remarks>
-    public List<MenuListDto> GetMenu()
+    public async Task<List<MenuListDto>> GetMenuAsync()
     {
-        return _db.Menus
+        return await _db.Menus
             .AsNoTracking()
             .Select(m => new MenuListDto
             {
@@ -35,7 +50,7 @@ public class MenuRepository : IMenuRepository
                 LongDescription = m.LongDescription,
                 DeliveryTime = m.DeliveryTime
             })
-            .ToList();
+            .ToListAsync();
     }
 
     /// <summary>
@@ -45,13 +60,20 @@ public class MenuRepository : IMenuRepository
     /// EFFECTS:
     /// Queries the database and returns the image associated with the specified menu identifier.
     /// </remarks>
-    public string GetMenuImage(int mid)
+    public async Task<string> GetMenuImageAsync(int mid)
     {
-        return _db.Menus
+        var exists = await _db.Menus
+            .AsNoTracking()
+            .AnyAsync(m => m.Id == mid);
+
+        if (!exists)
+            throw new KeyNotFoundException($"Menu con MID {mid} non trovato.");
+
+        return await _db.Menus
             .AsNoTracking()
             .Where(m => m.Id == mid)
             .Select(m => m.Image)
-            .First();
+            .FirstAsync();
     }
 
     /// <summary>
@@ -61,9 +83,9 @@ public class MenuRepository : IMenuRepository
     /// EFFECTS:
     /// Queries the database and returns the details associated with the specified menu identifier.
     /// </remarks>
-    public MenuListDto GetMenuDetails(int mid)
+    public async Task<MenuListDto> GetMenuDetailsAsync(int mid)
     {
-        return _db.Menus
+        var menu = await _db.Menus
             .AsNoTracking()
             .Where(m => m.Id == mid)
             .Select(m => new MenuListDto
@@ -77,7 +99,12 @@ public class MenuRepository : IMenuRepository
                 LongDescription = m.LongDescription,
                 DeliveryTime = m.DeliveryTime
             })
-            .First();
+            .FirstOrDefaultAsync();
+
+        if (menu == null)
+            throw new KeyNotFoundException($"Menu con MID {mid} non trovato.");
+
+        return menu;
     }
 
 }

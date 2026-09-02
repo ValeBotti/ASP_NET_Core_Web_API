@@ -1,14 +1,28 @@
+using Microsoft.EntityFrameworkCore;
 public class SessionRepository : ISessionRepository
 {
 /// <remarks>
 /// OVERVIEW: This repository performs persistence operations for the uid_sid entity.
 /// </remarks>
-
     private readonly AppDbContext _db;
 
     public SessionRepository(AppDbContext db)
     {
         _db = db;
+    }
+
+    /// <summary>
+    /// Retrieves session information by its identifier.
+    /// </summary>
+    /// <remarks>
+    /// EFFECTS:
+    /// Queries the database and returns the session associated with the specified identifier.
+    /// </remarks>
+    public async Task<UidSid?> GetUidBySidAsync(string sid)
+    {
+        return await _db.UidSids
+            .AsNoTracking()
+            .FirstOrDefaultAsync(u => u.Id == sid);
     }
     
     /// <summary>
