@@ -169,13 +169,14 @@ Here I am, understanding the reason why we have "Models" and "DTOs"; now it make
 Preventing mistakes or malicious inputs: you could think about it all day and  still end up not covering anything.<br>
 -> **The point isn't to foresee every possible input; it is to PROTECT the data's domain.** <br>
 
-### Repository Layer <br>
+### Repository Layer
 -> Seeder and DB access. <br>
 
 The domain layer is tied to the database, especially in my application where I used the code-first method.
 Nothing else should be there. So, where should my seeder class go? The answer is: the repository layer, which is dedicated to "using" (and, in my case, populating) the DB. <br>
 Besides the seeder, every data-access operation must be here. It's like creating functions that encapsulate an SQL query. Inputs are query params, and the output is whatever the SQL query returns. <br>
 Plus, it's nice to have modularity and replicability within them. <br>
+In my project, each repository class is linked to the corresponding entity's table.
 
 We are in the implementation phase, and Liskov comes in handy again: the importance of a method's signature. <br>
 -> The signature says almost everything you need to know about the persistence operation: the needed parameters and the outcome. <br>
@@ -184,46 +185,90 @@ Now let's read my controllers' XML documentation; there I'll find what data my A
 
 -> I've decided to remove Liskov's comments from the controller in favor of the repository methods where actions take place.
 
+### Application Layer
+This layer includes DTOs and services. Not every controller has this layer. No need to explain it further; it follows the standard rules.
+
+### Presentation Layer
+My Order APIs needed an "ExceptionController" to be added, which allowed me to justify the removal of any DB access from my controller classes. Now I'm very happy with my methods; the separation is clear and sharp. <br>
+For a simple project like mine, it could have been too much, but my order class was complex enough. <br>
+
 # OVERVIEW: Layered Web API Architecture - description
 
 I've decided to refactor my directories to follow this architectural structure. Since the project focuses on that, it's coherent, maybe a bit nauseating after reading this, but still. <br>
 Btw: it isn't always the best practice.
 
-#### 1. Domain / Data Layer - Models + DbContext
 ```
 ASP.NET_Core_Web_API
-                    └── Data/
-                            └── AppDbContext.cs -> map POCOs to  SQL Server naming conventions + constraints + owned types + lazy loading
-                    └── Migrations/ -> DB edit history (I dropped the whole previous DB)
-                    └── Models/ -> POCOs
-                              └── Location.cs
-                              └── Menu.cs
-                              └── Order.cs
-                              └── UidSid.cs
-                              └── User.cs
-                    └── Program.cs -> DB connection
+                    └── Domain/
+                    └── Repository/
+                    └── Application/
+                    └── Presentation/
+                    └── Program.cs
+```
+
+#### 1. Domain / Data Layer - Models + DbContext
+```
+Domain
+    └── Data/
+            └── AppDbContext.cs -> map POCOs to  SQL Server naming conventions + constraints + owned types + lazy loading
+    └── Migrations/ -> DB edit history (I dropped the whole previous DB)
+    └── Models/ -> POCOs
+              └── Location.cs
+              └── Menu.cs
+              └── Order.cs
+              └── UidSid.cs
+              └── User.cs
 ```
 #### 2. Repository Layer - DB access
 ```
-ASP.NET_Core_Web_API
-    └── Repository/
-            └── Interfaces/ -> contracts
-                    └── IMenuRepository.cs
-                    └── IOrderRepository.cs
-                    └── IUidSidRepository.cs
-            └── Implementations/ -> DB access
-                    └── MenuRepository.cs
-                    └── OrderRepository.cs
-                    └── UidSidRepository.cs
-            └── Seed/ -> populating DB
-                    └── MenuSeeder.cs
-                    └── menu.json
-            └── Images/ -> datas
-                    └── avocado_toast.jpg
-                    └── ...
-                    .
-                    .
-                    .
+Repository/
+        └── Interfaces/ -> contracts
+                └── IMenuRepository.cs
+                └── IOrderRepository.cs
+                └── IUidSidRepository.cs
+        └── Implementations/ -> DB access
+                └── MenuRepository.cs
+                └── OrderRepository.cs
+                └── UidSidRepository.cs
+        └── Seed/ -> populating DB
+                └── MenuSeeder.cs
+                └── menu.json
+                └── Images/ -> datas
+                        └── avocado_toast.jpg
+                        └── ...
+                        .
+                        .
+                        .
 ```
 #### 3. Application / Service Layer - Service
+```
+Appliaction/
+        └── Services/
+                    └── Interfaces/ -> contracts
+                            └── IOrderService.cs
+                            └── IUserService.cs
+                    └── Implementations/
+                            └── OrderService.cs
+                            └── UserService.cs
+        └── DTOs/ -> POCOs for APIs 
+                └── BuyOrderBody.cs
+                └── MenuListDto.cs
+                └── MenuSeedDto.cs
+                └── OrderBoughtDto.cs
+                └── OrderCompletedDto.cs
+                └── OrderDtoBase.cs
+                └── OrderOnDeliveryDto.cs
+                └── UserDto.cs
+```
 #### 4. Presentation Layer - Controller
+```
+Presentation/
+        └── Controller/ -> API access
+                    └── ErrorController.cs -> handling exceptions
+                    └── MenuController.cs
+                    └── OrderController.cs
+                    └── SessionController.cs
+                    └── UserController.cs
+```
+
+# THE PROJECT IS NOW SCALABLE - by design.
