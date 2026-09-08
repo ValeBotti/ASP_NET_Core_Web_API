@@ -1,7 +1,5 @@
 # ASP.NET-Core-Web-API - DEVELOPMENT JOURNAL
 
-> Note: A few side thoughts on this topic: [Observation_collage](README_Observation_collage.md)
-
 [![C# Language](https://img.shields.io/badge/C%23-Language-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-Web%20API-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://learn.microsoft.com/en-us/aspnet/core/web-api/)
 
@@ -52,6 +50,8 @@ Does the domain layer depend on anything? Technically, no. But to build it prope
 Now I desperately need my DB abstraction, and I regret my laziness when I chose not to draw it!
 I chose to prioritize seeing my Kotlin app working, and saw the flip side of the coin of the "outcome-oriented" approach, neglecting abstraction.<br>
 Should I regret it? I think, in this case, the goal was simply to move forward. Would I do it again? Yes.
+
+> Note: A few side thoughts on this topic: [Observation_collage](README_Observation_collage.md)
 
 ### Descriptive documentation
 
