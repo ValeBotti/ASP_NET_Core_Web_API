@@ -6,3 +6,7 @@
 ### Lessons taught by a nowhere-located senior:
 
 ![0collage](./Substack_thoughts/Substack_thought0.jpg)
+![1collage](./Substack_thoughts/Substack_thought1.jpg)
+![2collage](./Substack_thoughts/Substack_thought2.jpg)
+![3collage](./Substack_thoughts/Substack_thought3.jpg)
+![4collage](./Substack_thoughts/Substack_thought4.jpg)
