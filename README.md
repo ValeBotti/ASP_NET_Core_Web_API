@@ -1,6 +1,6 @@
 # ASP.NET-Core-Web-API - DEVELOPMENT JOURNAL
 
-I want to leave here an article I just found on Substak that expands upon the topic: [Clean Architecture slows teams](https://modernbackend.substack.com/p/clean-architecture-slows-teams?r=8itj4t&utm_medium=ios).
+A few thoughts on this topic in this README: [Observation_collage](README_Observation_collage.md)
 
 [![C# Language](https://img.shields.io/badge/C%23-Language-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-Web%20API-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://learn.microsoft.com/en-us/aspnet/core/web-api/)
