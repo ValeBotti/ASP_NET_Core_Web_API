@@ -3,7 +3,7 @@
 
 **Real-world scenarios POV:** The article I just read on Substack: [Clean Architecture slows teams - The modern backend](https://modernbackend.substack.com/p/clean-architecture-slows-teams?r=8itj4t&utm_medium=ios).
 
-### Lessons taught by a nowhere-located senior:
+### Lessons taught by a senior somewhere out there:
 
 <img src="./Substack_thoughts/Substack_thought0.jpg" width="350"> 
 <img src="./Substack_thoughts/Substack_thought1.jpg" width="350">
