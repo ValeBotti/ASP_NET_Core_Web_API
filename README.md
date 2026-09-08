@@ -1,6 +1,6 @@
 # ASP.NET-Core-Web-API - DEVELOPMENT JOURNAL
 
-A few thoughts on this topic in this README: [Observation_collage](README_Observation_collage.md)
+A few side thoughts on this topic: [Observation_collage](README_Observation_collage.md)
 
 [![C# Language](https://img.shields.io/badge/C%23-Language-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-Web%20API-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://learn.microsoft.com/en-us/aspnet/core/web-api/)
