@@ -19,7 +19,7 @@ That first version was messy code written in three days with Copilot's help. It 
 ### The University Mindset vs. Reality
 
 At university, I was the type to obsess over trying to deeply understand everything. <br>
-But Milan is a city that runs at the speed of outcomes, which is crazy and stressful, but it gives you an outlook when you push aside self-reservation:
+But **Milan is a city that runs at the speed of outcomes**, which is crazy and stressful, but it gives you an outlook when you push aside self-reservation:
 
 **The things you can *show* are valuable.**
 It's a matter of:
