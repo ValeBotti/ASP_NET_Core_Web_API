@@ -5,8 +5,8 @@
 
 ### Lessons taught by a nowhere-located senior:
 
-<img src="./Substack_thoughts/Substack_thought0.jpg" width="300"> 
-<img src="./Substack_thoughts/Substack_thought1.jpg" width="300">
-<img src="./Substack_thoughts/Substack_thought2.jpg" width="300">
-<img src="./Substack_thoughts/Substack_thought3.jpg" width="300">
-<img src="./Substack_thoughts/Substack_thought4.jpg" width="300">
+<img src="./Substack_thoughts/Substack_thought0.jpg" width="350"> 
+<img src="./Substack_thoughts/Substack_thought1.jpg" width="350">
+<img src="./Substack_thoughts/Substack_thought2.jpg" width="350">
+<img src="./Substack_thoughts/Substack_thought3.jpg" width="350">
+<img src="./Substack_thoughts/Substack_thought4.jpg" width="350">
