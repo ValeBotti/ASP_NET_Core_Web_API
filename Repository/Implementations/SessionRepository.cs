@@ -21,7 +21,6 @@ public class SessionRepository : ISessionRepository
     public async Task<UidSid?> GetUidBySidAsync(string sid)
     {
         return await _db.UidSids
-            .AsNoTracking()
             .FirstOrDefaultAsync(u => u.Id == sid);
     }
     

@@ -21,10 +21,9 @@ public class UserRepository : IUserRepository
     public async Task<User?> GetUserAsync(int uid)
     {
         return await _db.Users
-            .AsNoTracking()
             .FirstOrDefaultAsync(u => u.Id == uid);
     }
-    
+
     /// <summary>
     /// Persists a new User and its associated session identifier.
     /// </summary>

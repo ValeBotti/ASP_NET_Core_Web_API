@@ -8,7 +8,7 @@ public static class MenuSeeder
         if (db.Menus.Any())
             return;
 
-        var jsonPath = Path.Combine("Data", "menus.json");
+        var jsonPath = @"Repository\Seed\menus.json";
 
         var json = File.ReadAllText(jsonPath);
 
@@ -22,8 +22,9 @@ public static class MenuSeeder
 
         foreach (var item in items)
         {
-            
-            var imagePath = Path.Combine("Data", "images", item.ImageFile);
+
+            var basePath = Directory.GetCurrentDirectory();
+            var imagePath = Path.Combine(basePath, "Repository", "Seed", "images", item.ImageFile);
 
             var bytes = File.ReadAllBytes(imagePath);
 

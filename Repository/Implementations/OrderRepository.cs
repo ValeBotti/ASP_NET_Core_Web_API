@@ -17,24 +17,16 @@ public class OrderRepository : IOrderRepository
     /// Returns the most recent order associated with the specified UID, or null if no order is found.
     /// </remarks>
     public async Task<Order?> GetLastOrderAsync(int uid)
-    {
-        if (!_db.Users.Any(u => u.Id == uid))
-            throw new KeyNotFoundException($"User con UID {uid} non trovato.");
-        
-        return await _db.Orders
-            .Where(o => o.Uid == uid)
-            .OrderByDescending(o => o.Id)
-            .Select(o => new Order
-            {
-                Id = o.Id,
-                Uid = o.Uid,
-                Mid = o.Mid,
-                CreationTimestamp = o.CreationTimestamp,
-                CurrentPosition = o.CurrentPosition,
-                Status = o.Status
-            })
-            .FirstOrDefaultAsync();
-    }
+        {
+            if (!await _db.Users.AnyAsync(u => u.Id == uid))
+                throw new KeyNotFoundException($"User con UID {uid} non trovato.");
+
+            return await _db.Orders
+                .AsNoTracking()
+                .Where(o => o.Uid == uid)
+                .OrderByDescending(o => o.Id)
+                .FirstOrDefaultAsync();
+        }
 
     /// <summary>
     /// Inserts a new order into the database.
@@ -53,7 +45,7 @@ public class OrderRepository : IOrderRepository
         }
         catch (DbUpdateException ex)
         {
-            if (ex.InnerException?.Message.Contains("IX_Orders_Uid_OnDelivery") == true)
+            if (ex.InnerException?.Message.Contains("IX_order_user_id_OnDelivery") == true)
                 throw new InvalidOperationException("ORDER_ALREADY_ON_DELIVERY");
 
             throw;
@@ -70,21 +62,14 @@ public class OrderRepository : IOrderRepository
     /// </remarks>
     public async Task<Order?> GetCurrentOrderAsync(int oid)
     {
-        if (!_db.Orders.Any(o => o.Id == oid))
+        var order = await _db.Orders
+            .AsNoTracking()
+            .FirstOrDefaultAsync(o => o.Id == oid);
+
+        if (order == null)
             throw new KeyNotFoundException($"Order con OID {oid} non trovato.");
 
-        return await _db.Orders
-            .Where(o => o.Id == oid)
-            .Select(o => new Order
-            {
-                Id = o.Id,
-                Uid = o.Uid,
-                Mid = o.Mid,
-                CreationTimestamp = o.CreationTimestamp,
-                CurrentPosition = o.CurrentPosition,
-                Status = o.Status
-            })
-            .FirstOrDefaultAsync();
+        return order;
     }
 
     /// <summary>
@@ -102,7 +87,7 @@ public class OrderRepository : IOrderRepository
             throw new KeyNotFoundException($"Order con OID {order.Id} non trovato.");
 
         existingOrder.Status = order.Status;
-        existingOrder.CurrentPosition = order.CurrentPosition;
+        existingOrder.DeliveryTimestamp = order.DeliveryTimestamp;
 
         await _db.SaveChangesAsync();
     }

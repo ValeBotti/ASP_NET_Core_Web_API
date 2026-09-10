@@ -35,9 +35,15 @@ public class OrderController : ControllerBase
     /// Retrieves the current state of the order with the specified unique identifier.
     /// </summary>
     [HttpGet("{oid}")]
-    public async Task<IActionResult> GetCurrentOrder(int oid)
+    public async Task<IActionResult> GetCurrentOrder(int oid, [FromQuery] float lat, [FromQuery] float lng)
     {
-        var order = await _orderService.GetCurrentOrderAsync(oid);
+        var userLocation = new Location
+        {
+            Lat = lat,
+            Lng = lng
+        };
+
+        var order = await _orderService.GetCurrentOrderAsync(oid, userLocation);
 
         return Ok(order);
     }

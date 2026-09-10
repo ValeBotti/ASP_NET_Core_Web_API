@@ -20,6 +20,4 @@ public class Order
 
     public string? DeliveryTimestamp { get; set; }
 
-    public required Location CurrentPosition { get; set; }
-
 }

@@ -36,8 +36,7 @@ public class OrderService : IOrderService
         if (menu == null)
             throw new KeyNotFoundException($"Menu con MID {mid} non trovato.");
 
-        if (!string.IsNullOrEmpty(body.CardNumber) &&
-            body.CardNumber.StartsWith("0"))
+        if (!string.IsNullOrEmpty(body.CardNumber) && body.CardNumber.StartsWith("0"))
             throw new InvalidOperationException("INVALID_CARD");
 
         var uidEntry = await _sessionRepo.GetUidBySidAsync(body.Sid);
@@ -52,14 +51,17 @@ public class OrderService : IOrderService
             Uid = uid,
             CreationTimestamp = DateTime.UtcNow.ToString("o"),
             Status = "ON_DELIVERY",
-            CurrentPosition = new Location
-            {
-                Lat = body.DeliveryLocation.Lat,
-                Lng = body.DeliveryLocation.Lng
-            }
+            DeliveryTimestamp = null
         };
 
-        await _repo.AddOrderAsync(order);
+        try
+        {
+            await _repo.AddOrderAsync(order);
+        }
+        catch (InvalidOperationException ex) when (ex.Message == "ORDER_ALREADY_ON_DELIVERY")
+        {
+            throw new InvalidOperationException("ORDER_ALREADY_ON_DELIVERY");
+        }
 
         return new OrderOnDeliveryDto
         {
@@ -68,8 +70,9 @@ public class OrderService : IOrderService
             Mid = order.Mid,
             CreationTimestamp = order.CreationTimestamp,
             Status = order.Status,
+            DeliveryLocation = menu.Location,
             ExpectedDeliveryTimestamp = DateTime.UtcNow.AddMinutes(menu.DeliveryTime).ToString("o"),
-            CurrentPosition = order.CurrentPosition
+            CurrentPosition = body.DeliveryLocation
         };
     }
 
@@ -85,7 +88,7 @@ public class OrderService : IOrderService
     /// EFFECTS:
     /// Retrieves and determines the current delivery status and position of the order.
     /// </remarks>
-    public async Task<OrderDtoBase> GetCurrentOrderAsync(int oid)
+    public async Task<OrderDtoBase> GetCurrentOrderAsync(int oid, Location UserLocation)
     {
         var order = await _orderRepo.GetCurrentOrderAsync(oid);
         if (order == null)
@@ -99,14 +102,15 @@ public class OrderService : IOrderService
         if (user == null)
             throw new KeyNotFoundException($"Utente con UID {order.Uid} non trovato.");
 
-        var creation = DateTime.Parse(order.CreationTimestamp, null,
-            System.Globalization.DateTimeStyles.RoundtripKind).ToUniversalTime();
+        var creation = DateTime.Parse(order.CreationTimestamp, null, System.Globalization.DateTimeStyles.RoundtripKind).ToUniversalTime();
 
         var delivery = creation.AddMinutes(menu.DeliveryTime);
         var now = DateTime.UtcNow;
 
         bool isCompleted = now >= delivery;
-        string status = isCompleted ? "COMPLETED" : "ON_DELIVERY";
+        order.Status = isCompleted ? "COMPLETED" : "ON_DELIVERY";
+
+        order.DeliveryTimestamp = isCompleted ? delivery.ToString("o") : null;
 
         float totalSeconds = (float)(delivery - creation).TotalSeconds;
         float elapsedSeconds = (float)(now - creation).TotalSeconds;
@@ -116,22 +120,19 @@ public class OrderService : IOrderService
 
         var currentPosition = new Location
         {
-            Lat = order.CurrentPosition.Lat +
-                (menu.Location.Lat - order.CurrentPosition.Lat) * progress,
+            Lat = menu.Location.Lat + (UserLocation.Lat - menu.Location.Lat) * progress,
 
-            Lng = order.CurrentPosition.Lng +
-                (menu.Location.Lng - order.CurrentPosition.Lng) * progress
+            Lng = menu.Location.Lng + (UserLocation.Lng - menu.Location.Lng) * progress
         };
 
-        order.CurrentPosition = currentPosition;
-
-        if (status != order.Status)
+        try
         {
-            order.Status = status;
-            order.DeliveryTimestamp = delivery.ToString("o");
+            await _orderRepo.UpdateOrderAsync(order);
         }
-
-        await _orderRepo.UpdateOrderAsync(order);
+        catch (KeyNotFoundException)
+        {
+            throw new KeyNotFoundException($"Order con OID {order.Id} non trovato.");
+        }
 
         if (isCompleted)
         {
@@ -141,7 +142,8 @@ public class OrderService : IOrderService
                 Uid = order.Uid,
                 Mid = order.Mid,
                 CreationTimestamp = order.CreationTimestamp,
-                Status = status,
+                Status = order.Status,
+                DeliveryLocation = UserLocation,
                 DeliveryTimestamp = delivery.ToString("o"),
                 CurrentPosition = currentPosition
             };
@@ -153,7 +155,8 @@ public class OrderService : IOrderService
             Uid = order.Uid,
             Mid = order.Mid,
             CreationTimestamp = order.CreationTimestamp,
-            Status = status,
+            Status = order.Status,
+            DeliveryLocation = UserLocation,
             ExpectedDeliveryTimestamp = delivery.ToString("o"),
             CurrentPosition = currentPosition
         };

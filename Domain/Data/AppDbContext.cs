@@ -79,11 +79,6 @@ public class AppDbContext : DbContext
             entity.Property(o => o.CreationTimestamp).HasColumnName("creation_timestamp");
             entity.Property(o => o.Status).HasColumnName("status");
             entity.Property(o => o.DeliveryTimestamp).HasColumnName("delivery_timestamp");
-            entity.OwnsOne(o => o.CurrentPosition, nav =>
-            {
-                nav.Property(p => p.Lat).HasColumnName("current_position_lat");
-                nav.Property(p => p.Lng).HasColumnName("current_position_lng");
-            });
 
             entity.ToTable("order", t =>
             {
