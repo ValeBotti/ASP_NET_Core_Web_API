@@ -23,7 +23,7 @@ But **Milan is a city that runs at the speed of outcomes**, which is crazy and s
 **The things you can *show* are valuable.**
 It's a matter of:
 - Communication (can I bring this work to someone and will the interlocutor understand? Firstly, I have to have something understandable to show)
-- Trial-and-error (does it work in the real world? And no, you will not pre-establish that with your extraordinary logical talent)
+- Trial-and-error (does it work in the real world? And no, you will not pre-establish that with your extraordinary logical talent. (Been there, done that))
 - Moving forward
 - Gathering real feedback (users, the system, your teammate, everything will give you unexpected valuable feedback, and there will start another creative outlook upon the first one)
 
