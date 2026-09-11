@@ -1,4 +1,4 @@
-using Microsoft.OpenApi;
+using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,13 +18,27 @@ builder.Services.AddSwaggerGen(c =>
         {
             Name = "Valentina",
             Email = "vale.botti@outlook.com",
-            Url = new Uri("https://www.linkedin.com/in/valentina-botti-ba6315228/"),
+            Url = new Uri("https://www.linkedin.com/in/valentina-botti-ba6315228/")
         },
         License = new OpenApiLicense
         {
             Name = "MIT License",
             Url = new Uri("https://opensource.org/licenses/MIT")
         }
+    });
+});
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
     });
 });
 
@@ -69,12 +83,8 @@ using (var scope = app.Services.CreateScope())
 
 }
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseExceptionHandler("/error");
 
