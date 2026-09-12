@@ -79,8 +79,8 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    MenuSeeder.Seed(db, app.Environment);
-
+    var env = scope.ServiceProvider.GetRequiredService<IWebHostEnvironment>();
+    MenuSeeder.Seed(db, env);
 }
 
 app.UseSwagger();
