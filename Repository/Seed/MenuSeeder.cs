@@ -11,10 +11,12 @@ public static class MenuSeeder
 
         foreach (var item in items)
         {
+            /* REMOVING base64 IMAGE FOR PRODUCTION
             var imagePath = Path.Combine(env.WebRootPath, "images", item.ImageFile);
 
             var bytes = File.ReadAllBytes(imagePath);
             var base64 = Convert.ToBase64String(bytes);
+            */
 
             var menu = new Menu
             {
@@ -22,7 +24,7 @@ public static class MenuSeeder
                 Price = item.Price,
                 Location = item.Location,
                 ImageVersion = item.ImageVersion,
-                Image = base64,
+                Image = item.Image,
                 ShortDescription = item.ShortDescription,
                 LongDescription = item.LongDescription,
                 DeliveryTime = item.DeliveryTime
