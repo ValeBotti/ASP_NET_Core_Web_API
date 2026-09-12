@@ -4,7 +4,7 @@
     "Price": 7.50,
     "Location": { "Lat": 45.0524, "Lng": 9.692 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/avocado_toast.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/avocado_toast.jpg",
     "ShortDescription": "Fresh avocado toast",
     "LongDescription": "Crunchy bread topped with ripe avocado, lime, and black pepper.",
     "DeliveryTime": 15
@@ -14,7 +14,7 @@
     "Price": 9.90,
     "Location": { "Lat": 45.0385, "Lng": 9.6705 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/burritos.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/burritos.jpg",
     "ShortDescription": "Stuffed burritos",
     "LongDescription": "Tortilla filled with meat, rice, beans, and spicy sauce.",
     "DeliveryTime": 25
@@ -24,7 +24,7 @@
     "Price": 4.50,
     "Location": { "Lat": 45.0605, "Lng": 9.708 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/cake.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/cake.jpg",
     "ShortDescription": "Slice of cake",
     "LongDescription": "Soft cake with a light cream filling.",
     "DeliveryTime": 10
@@ -34,7 +34,7 @@
     "Price": 6.00,
     "Location": { "Lat": 45.0455, "Lng": 9.71 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/cocktail.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/cocktail.jpg",
     "ShortDescription": "Fresh cocktail",
     "LongDescription": "Refreshing drink with fruit and ice.",
     "DeliveryTime": 5
@@ -44,7 +44,7 @@
     "Price": 3.50,
     "Location": { "Lat": 45.0538, "Lng": 9.6875 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/donuts.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/donuts.jpg",
     "ShortDescription": "Sweet donuts",
     "LongDescription": "Glazed donuts with sugar and chocolate.",
     "DeliveryTime": 10
@@ -54,7 +54,7 @@
     "Price": 8.50,
     "Location": { "Lat": 45.056, "Lng": 9.686 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/dumplings.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/dumplings.jpg",
     "ShortDescription": "Asian dumplings",
     "LongDescription": "Dumplings filled with meat and vegetables.",
     "DeliveryTime": 20
@@ -64,7 +64,7 @@
     "Price": 4.00,
     "Location": { "Lat": 45.0615, "Lng": 9.698 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/fries.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/fries.jpg",
     "ShortDescription": "French fries",
     "LongDescription": "Crispy fries with sea salt.",
     "DeliveryTime": 10
@@ -74,7 +74,7 @@
     "Price": 12.90,
     "Location": { "Lat": 45.066, "Lng": 9.716 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/grilled_beef.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/grilled_beef.jpg",
     "ShortDescription": "Grilled beef",
     "LongDescription": "Grilled beef seasoned with spices and served with sides.",
     "DeliveryTime": 30
@@ -84,7 +84,7 @@
     "Price": 9.50,
     "Location": { "Lat": 45.07, "Lng": 9.68 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/hamburger.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/hamburger.jpg",
     "ShortDescription": "Classic hamburger",
     "LongDescription": "Burger with meat, lettuce, and tomato.",
     "DeliveryTime": 20
@@ -94,7 +94,7 @@
     "Price": 3.00,
     "Location": { "Lat": 45.0705, "Lng": 9.735 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/ice_cream.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/ice_cream.jpg",
     "ShortDescription": "Artisanal ice cream",
     "LongDescription": "Creamy ice cream with assorted flavors.",
     "DeliveryTime": 5
@@ -104,7 +104,7 @@
     "Price": 8.00,
     "Location": { "Lat": 45.033, "Lng": 9.75 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/meatballs.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/meatballs.jpg",
     "ShortDescription": "Meatballs in sauce",
     "LongDescription": "Meatballs served with tomato sauce.",
     "DeliveryTime": 25
@@ -114,7 +114,7 @@
     "Price": 2.50,
     "Location": { "Lat": 45.018, "Lng": 9.633 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/muffin.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/muffin.jpg",
     "ShortDescription": "Soft muffin",
     "LongDescription": "Moist muffin with chocolate chips.",
     "DeliveryTime": 10
@@ -124,7 +124,7 @@
     "Price": 11.90,
     "Location": { "Lat": 45.08, "Lng": 9.65 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/paella.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/paella.jpg",
     "ShortDescription": "Spanish paella",
     "LongDescription": "Rice with seafood, meat, and vegetables.",
     "DeliveryTime": 35
@@ -134,7 +134,7 @@
     "Price": 5.00,
     "Location": { "Lat": 45.045, "Lng": 9.58 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/pancake.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/pancake.jpg",
     "ShortDescription": "Sweet pancakes",
     "LongDescription": "Fluffy pancakes with maple syrup.",
     "DeliveryTime": 15
@@ -144,7 +144,7 @@
     "Price": 7.00,
     "Location": { "Lat": 45.056, "Lng": 9.56 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/pasta.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/pasta.jpg",
     "ShortDescription": "Italian pasta",
     "LongDescription": "Pasta served with traditional sauce.",
     "DeliveryTime": 20
@@ -154,7 +154,7 @@
     "Price": 8.50,
     "Location": { "Lat": 45.0524, "Lng": 9.692 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/pizza.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/pizza.jpg",
     "ShortDescription": "Classic pizza",
     "LongDescription": "Pizza topped with mozzarella and tomato.",
     "DeliveryTime": 25
@@ -164,7 +164,7 @@
     "Price": 10.50,
     "Location": { "Lat": 45.0385, "Lng": 9.6705 },
     "ImageVersion": 2,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/poke.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/poke.jpg",
     "ShortDescription": "Poke bowl",
     "LongDescription": "Bowl with raw fish, rice, and vegetables.",
     "DeliveryTime": 20
@@ -174,7 +174,7 @@
     "Price": 2.00,
     "Location": { "Lat": 45.0605, "Lng": 9.708 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/popcorn.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/popcorn.jpg",
     "ShortDescription": "Salted popcorn",
     "LongDescription": "Crunchy popped corn.",
     "DeliveryTime": 5
@@ -184,7 +184,7 @@
     "Price": 9.00,
     "Location": { "Lat": 45.0455, "Lng": 9.71 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/ramen.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/ramen.jpg",
     "ShortDescription": "Japanese ramen",
     "LongDescription": "Hot broth with noodles and meat.",
     "DeliveryTime": 30
@@ -194,7 +194,7 @@
     "Price": 6.00,
     "Location": { "Lat": 45.0538, "Lng": 9.6875 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/salad.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/salad.jpg",
     "ShortDescription": "Fresh salad",
     "LongDescription": "Mixed vegetables with light dressing.",
     "DeliveryTime": 10
@@ -204,7 +204,7 @@
     "Price": 12.00,
     "Location": { "Lat": 45.056, "Lng": 9.686 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/salmon.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/salmon.jpg",
     "ShortDescription": "Grilled salmon",
     "LongDescription": "Salmon fillet served with sides.",
     "DeliveryTime": 25
@@ -214,7 +214,7 @@
     "Price": 5.50,
     "Location": { "Lat": 45.0615, "Lng": 9.698 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/soup.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/soup.jpg",
     "ShortDescription": "Hot soup",
     "LongDescription": "Vegetable and legume soup.",
     "DeliveryTime": 15
@@ -224,7 +224,7 @@
     "Price": 8.00,
     "Location": { "Lat": 45.066, "Lng": 9.716 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/tacos.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/tacos.jpg",
     "ShortDescription": "Mexican tacos",
     "LongDescription": "Tacos filled with meat and vegetables.",
     "DeliveryTime": 20
@@ -234,7 +234,7 @@
     "Price": 4.50,
     "Location": { "Lat": 45.07, "Lng": 9.68 },
     "ImageVersion": 1,
-    "ImageUrl": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/waffles.jpg",
+    "Image": "https://fooddeliveryblobs.blob.core.windows.net/images-menu/Images/waffles.jpg",
     "ShortDescription": "Sweet waffle",
     "LongDescription": "Crunchy waffle topped with fruit.",
     "DeliveryTime": 15
