@@ -3,8 +3,6 @@ public static class MenuSeeder
 {
     public static void Seed(AppDbContext db, IWebHostEnvironment env)
     {
-        if (db.Menus.Any())
-            return;
 
         var jsonPath = Path.Combine(env.ContentRootPath, "Repository", "Seed", "menus.json");
         var json = File.ReadAllText(jsonPath);
