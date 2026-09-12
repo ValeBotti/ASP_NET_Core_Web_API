@@ -8,3 +8,4 @@ Things to add:
 - sync with github
 - Publish zip
 - .net 10 to .net 10 (why)
+- Azure Blob Storage (changed from Base64 to URL; I need to modify the frontend once again *crying*)
