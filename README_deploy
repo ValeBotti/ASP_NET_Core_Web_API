@@ -1,1 +1,10 @@
-Readme
+# DEPLOY ISSUES AND SOLUTIONS
+Things to add:
+
+- From Linux to Windows (free web service)
+- I had to remove the seeder (populating from the client to Azure  + connection string + why)
+- Learned about the diagnostic console (free plan: no logs)
+- Authorization I've used (write down everything you need for auth)
+- sync with github
+- Publish zip
+- .net 10 to .net 10 (why)
