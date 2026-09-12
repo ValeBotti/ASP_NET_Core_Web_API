@@ -3,7 +3,8 @@
 [![C# Language](https://img.shields.io/badge/C%23-Language-239120?style=for-the-badge&logo=csharp&logoColor=white)](https://learn.microsoft.com/en-us/dotnet/csharp/)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-Web%20API-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://learn.microsoft.com/en-us/aspnet/core/web-api/)
 
-## ✔️ DEPLOYED ON Azure - Swagger URL: https://food-delivery-backend-amh8f8atbkftcmaa.italynorth-01.azurewebsites.net/Swagger/index.html
+## ✔️ DEPLOYED ON Azure - Swagger URL: <br>
+https://food-delivery-backend-amh8f8atbkftcmaa.italynorth-01.azurewebsites.net/Swagger/index.html
 
 Backend created for the food delivery app.  
 
