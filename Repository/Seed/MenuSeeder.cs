@@ -7,7 +7,7 @@ public static class MenuSeeder
         var jsonPath = Path.Combine(env.ContentRootPath, "Repository", "Seed", "menus.json");
         var json = File.ReadAllText(jsonPath);
 
-        var items = JsonSerializer.Deserialize<List<MenuSeedDto>>(json);
+        var items = JsonSerializer.Deserialize<List<Menu>>(json);
 
         foreach (var item in items)
         {
