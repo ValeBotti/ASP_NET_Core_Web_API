@@ -72,7 +72,7 @@ Should I regret it? I think, in this case, the goal was simply to move forward. 
 - **Menu - is referenced by -> Order -** each Menu can be referred to by zero or more Orders (0, N).
 
 ### TEENY-TINY E-R SCHEMA
-![E-R SCHEMA](e_r_schema/schema.jpg)
+![E-R SCHEMA](er_schema/schema.jpg)
 
 ### TEENY-TINY RELATIONAL SCHEMA
 ```HTML
